@@ -14,8 +14,6 @@ function App() {
         className ="titleApp"
         >
           Welcome to myfirstApp</h1>
-        
-
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
