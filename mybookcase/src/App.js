@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import Book from './components/Books.js';
+import Book from './components/Book.js';
 import data from './models/books.json'
+import BookList from './components/BookList.js'
 
 const App = (props) => {
+  //-- data is the first initial state
   const [books] = useState(data);
 
   return(
     <div>
-      {books.map(book => <Book key={book.id} book={book} />)}
+      {/* -----we are using books from the states */}
+      {/* <Header /> */}
+      <BookList books={books} />
     </div>
   );
 }
