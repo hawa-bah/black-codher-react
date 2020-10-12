@@ -1,0 +1,25 @@
+.BookDiv{
+    padding: 20px;
+    font-size: 12pt;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    height: 400px;
+    width: 200;
+    overflow: auto;
+
+}
+.BookDescrip{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility:hidden;
+    opacity: 0;
+}
+
+.BookDiv:hover .BookDescrip{
+    visibility: visible;
+    opacity: 1;
+    overflow: auto;
+} 

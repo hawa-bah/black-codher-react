@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Book.css';
 //-- this is a functional component
 const Book = (props) => {
     let {id, 
@@ -14,14 +15,15 @@ const Book = (props) => {
 
 
     return (
-        <div>
+        <div className = "BookDiv">
             <h2>{title}</h2>
             <p>by {authors? authors.join(',') : 'No authors'}</p>
             {/* ---in here we could have a ternary operators,  */}
             <p>{listPrice && listPrice.amount}</p>
             {/* <p>{listPrice.amount}</p> */}
-            <p>{description}</p>
-            <img src={smallThumbnail || thumbnail} alt={title}/>
+            {/* <p className="BookDescrip">{description}</p> */}
+            <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
+            <p className="BookDescrip">{description}</p>
             <button onClick={() => props.addBook(title, id)}>Add +</button>
         </div>
     );
