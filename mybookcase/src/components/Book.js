@@ -7,12 +7,14 @@ const Book = (props) => {
         saleInfo: {listPrice}
     } = props.book;
 
-    function addBook (title) {
-        console.log(`The Book '${title}' was clicked`);
-    }
+    // we are moving this to App.js in sess.5 
+    // function addBook (title) {
+    //     console.log(`The Book '${title}' was clicked`);
+    // }
+
+
     return (
         <div>
-
             <h2>{title}</h2>
             <p>by {authors? authors.join(',') : 'No authors'}</p>
             {/* ---in here we could have a ternary operators,  */}
@@ -20,7 +22,7 @@ const Book = (props) => {
             {/* <p>{listPrice.amount}</p> */}
             <p>{description}</p>
             <img src={smallThumbnail || thumbnail} alt={title}/>
-            <button onClick={() => addBook(title)}>Add +</button>
+            <button onClick={() => props.addBook(title, id)}>Add +</button>
         </div>
     );
 }

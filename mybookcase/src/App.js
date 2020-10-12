@@ -1,18 +1,49 @@
 import React, { useState } from 'react';
-import Book from './components/Book.js';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import data from './models/books.json'
+import Header from './components/Header.js';
+import About from './pages/About.js';
 import BookList from './components/BookList.js'
 
 const App = (props) => {
   //-- data is the first initial state
-  const [books] = useState(data);
+  const [books, setBooks] = useState(data);
+
+  function addBook(title, id) {
+// ex.4
+// check filter if it's not maching 
+    const newBookList = books.filter(book => book.id !== id);
+    setBooks(newBookList);
+    console.log(`The Book '${title}' was clicked`);
+  }
 
   return(
-    <div>
-      {/* -----we are using books from the states */}
-      {/* <Header /> */}
-      <BookList books={books} />
-    </div>
+      // {/* -----we are using books from the states */}
+      // {/* <Header /> */}
+    <>
+      <Router >
+        <Route exact path="/" render={() => (
+          <>
+            <Header />
+            <BookList books={books}  addBook={addBook}/>
+          </>
+        )} />
+
+        <Route exact path="/bookcase" render={() => (
+          <>
+            <Header />
+          </>
+        )} />
+
+        <Route exact path="/about" render={() => (
+          <>
+            <About />
+          </>
+        )} />
+
+      </Router>
+    </>
+
   );
 }
 export default App;
