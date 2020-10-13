@@ -11,7 +11,7 @@ const About = () =>{
 
                 
                 <div className="topBanner">
-                    
+                    <h1 className="pageTitle">About</h1>
                 </div>
                 <div className="navBar">
                     <div className="navLink">

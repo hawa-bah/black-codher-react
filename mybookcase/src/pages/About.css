@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap');
 
@@ -9,6 +10,13 @@ body, html {
     background-color: rgb(41, 0, 41);
     font-family: 'Open Sans', sans-serif;
 }
+.pageTitle{
+    color: ivory;
+    padding: 30px;
+    font-family: 'Monoton', cursive;
+    font-size: 90px;
+    text-align: center;
+}
 .navBar{
     padding: 10px;
     font-size: 18px;
@@ -16,14 +24,18 @@ body, html {
     margin-top: 10px;
     margin-bottom: 30px;
     text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    
 }
 .navLink {
     background-color: rgb(41, 0, 41);
     color: white;
     font-family: Arial, Helvetica, sans-serif ;
-    width: 70px;
+    min-width: 70px;
     border-radius: 5px;
     padding: 5px;
+    margin-right: 5px;
 }
 .navLink:hover{
     background-color: white;
@@ -81,7 +93,6 @@ body, html {
 
 .topBanner{
     width: 100%;
-    height: 100px;
     background-image: '../../public/img/booksOpen.jpg';  
 }
 .imgBooks{

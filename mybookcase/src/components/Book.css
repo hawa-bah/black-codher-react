@@ -1,0 +1,77 @@
+.BookDiv{
+    /* display:flex;
+    justify-content: space-evenly;
+    justify-content: space-between; */
+    padding: 15px;
+    margin: 40px;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: rgb(41, 0, 41) solid ;
+    
+    /* border-width: 5px; */
+}
+.BookDiv:hover{
+    background-color: #90959c;
+    box-shadow: 0px 0px 10px #90959c ;
+}
+.BookSub1{
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    /* width: 75%; */
+    
+}
+.imgBook{
+    margin-right: auto;
+    margin-left: auto;
+}
+.btnbook{
+    position: relative;
+    width: 10spx;
+    margin: 10px;
+}
+.BookDescp{
+    width: 100%;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+@media screen and (min-width: 480px) {
+    .BookDiv{
+        display:flex;
+        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: 15px;
+        margin: 40px;
+        font-family: 'Open Sans', sans-serif;
+        border-bottom: rgb(41, 0, 41) solid ;
+        /* border-width: 5px; */
+    }
+    .BookDiv:hover{
+        background-color: #90959c;
+        box-shadow: 0px 0px 10px #90959c ;
+    }
+    .BookSub1{
+        padding: 10px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width: 125%;
+    }
+    .imgBook{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .btnbook{
+        position: relative;
+        width: 100px;
+        margin: 10px;
+    }
+    .BookDescp{
+        flex-basis: 120%;
+        max-height: 500px;
+        overflow: scroll;
+
+    }
+
+  }
+  

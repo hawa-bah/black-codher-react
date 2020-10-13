@@ -4,6 +4,7 @@ import data from './models/books.json'
 import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
+import Search from './components/Search.js';
 
 const App = (props) => {
   //-- data is the first initial state
@@ -21,10 +22,12 @@ const App = (props) => {
       // {/* -----we are using books from the states */}
       // {/* <Header /> */}
     <>
+    
       <Router >
         <Route exact path="/" render={() => (
           <>
             <Header />
+            <Search />
             <BookList books={books}  addBook={addBook}/>
           </>
         )} />
