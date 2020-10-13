@@ -7,11 +7,13 @@ const Header = () => {
     <React.Fragment>
         <h1>My bookcase</h1>
         <div className="navBar">
+            
             <Link to="/" className="navLink">Home</Link>
             <Link to="/bookcase" className="navLink bookLink">Bookcase</Link>
             <Link to="/about" className="navLink aboutLink">About</Link>
         </div>
-        <Search />
+        {/* <Search /> */}
+        
         
     </React.Fragment>
     )

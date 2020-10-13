@@ -9,6 +9,8 @@ import Search from './components/Search.js';
 const App = (props) => {
   //-- data is the first initial state
   const [books, setBooks] = useState(data);
+  const [keyword, setKeyword] = useState('');
+
 
   function addBook(title, id) {
 // ex.4
@@ -18,16 +20,25 @@ const App = (props) => {
     console.log(`The Book '${title}' was clicked`);
   }
 
+  async function findBooks (value) {
+    //ex.2 sess.7. doing the search books api
+  
+    const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+    
+    if(!results.error){
+    setBooks(results.items);
+    }
+  };
+
   return(
       // {/* -----we are using books from the states */}
-      // {/* <Header /> */}
     <>
-    
       <Router >
         <Route exact path="/" render={() => (
           <>
             <Header />
-            <Search />
+            {/* {findbooks} is the value of the function findBooks */}
+            <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
             <BookList books={books}  addBook={addBook}/>
           </>
         )} />

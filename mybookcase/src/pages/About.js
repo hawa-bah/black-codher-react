@@ -9,7 +9,6 @@ const About = () =>{
         <React.Fragment>
             <div className="bodyAbout">
 
-                
                 <div className="topBanner">
                     <h1 className="pageTitle">About</h1>
                 </div>
