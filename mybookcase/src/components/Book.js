@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
+// import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 //-- this is a functional component
 const Book = (props) => {
     let {id, 
@@ -24,6 +27,7 @@ const Book = (props) => {
                 {/* <p>{listPrice.amount}</p> */}
                 <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
                 <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button>
+                <Button>Btn2</Button>
             </div>
             
             <p className="BookDescp">{description}</p>

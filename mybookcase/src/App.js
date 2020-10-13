@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import data from './models/books.json'
 import Header from './components/Header.js';
 import About from './pages/About.js';
