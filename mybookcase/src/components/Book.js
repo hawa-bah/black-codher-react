@@ -4,7 +4,7 @@ import './Book.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-//-- this is a functional component
+
 const Book = (props) => {
     let {id, 
         volumeInfo: {title, authors, description, imageLinks: {smallThumbnail, thumbnail}},
@@ -26,7 +26,8 @@ const Book = (props) => {
                 <p>{listPrice && listPrice.amount}</p>
                 {/* <p>{listPrice.amount}</p> */}
                 <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
-                <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button>
+                {/* <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button> */}
+                <button className="btnAdd btnbook" onClick={() => {props.addBook(title, id); props.createFlash(title,id)}}>Add +</button>
                 <Button>Btn2</Button>
             </div>
             

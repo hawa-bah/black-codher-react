@@ -7,10 +7,10 @@ import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
+
 import Flash from './components/Flash';
-
-
-import Alert from '@material-ui/lab/Alert'
+import Alert from '@material-ui/lab/Alert';
+import Fade from '@material-ui/core/Fade';
 
 const App = (props) => {
   //-- data is the first initial state
@@ -31,14 +31,27 @@ const App = (props) => {
     console.log(`The Book '${title}' was clicked`);
 
     //function for the flash message 
+    // setFlash(true);
+    // setTimeout(() => {
+    //   setFlash(null);
+    // }, 2000);
+
+    
+
+  }
+
+  function createFlash(title, id) {
     setFlash(true);
     setTimeout(() => {
       setFlash(null);
-    }, 5000);
+    }, 2000);
 
-    let bookAdded = title;
-    
+    console.log(`The Flag '${title}' is working`);
+
+    // let bookAdded = title};
+
   }
+  
  // creating a function
   async function findBooks (value) {
     //ex.2 sess.7. doing the search books api
@@ -52,22 +65,29 @@ const App = (props) => {
 
   return(
       // {/* -----we are using books from the states */}
+
+
     <>
       <Router >
 
         <Route exact path="/" render={() => (
           <>
             <Header />
-            {/* {findbooks} is the value of the function findBooks */}
+            
             {/* <Flash /> */}
+
             {
               flash
-              ?<Flash />
+              ?(<Fade in={flash} timeout={{ enter: 300, exit: 1000 }}>
+                  <Alert style={{position: "fixed"}} > the book {} has been added</Alert>
+                </Fade>)
               : null
             }
             
+            {/* {findbooks} is the value of the function findBooks */}
             <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
-            <BookList books={books}  addBook={addBook}/>
+            {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
+            <BookList books={books}  addBook={addBook} createFlash={createFlash}/>
           </>
         )} />
 
@@ -89,7 +109,7 @@ const App = (props) => {
   );
 }
 export default App;
-export let bookAdded;
+// export default bookAdded;
 
 
 
