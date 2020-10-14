@@ -7,21 +7,39 @@ import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
+import Flash from './components/Flash';
+
+
+import Alert from '@material-ui/lab/Alert'
 
 const App = (props) => {
   //-- data is the first initial state
   const [books, setBooks] = useState(data);
   const [keyword, setKeyword] = useState('');
 
+  const [flash, setFlash] = useState(null);
+
+
 
   function addBook(title, id) {
 // ex.4
 // check filter if it's not maching 
+
+    //we are deleating the book from the booksList everytime it's added
     const newBookList = books.filter(book => book.id !== id);
     setBooks(newBookList);
     console.log(`The Book '${title}' was clicked`);
-  }
 
+    //function for the flash message 
+    setFlash(true);
+    setTimeout(() => {
+      setFlash(null);
+    }, 5000);
+
+    let bookAdded = title;
+    
+  }
+ // creating a function
   async function findBooks (value) {
     //ex.2 sess.7. doing the search books api
   
@@ -36,10 +54,18 @@ const App = (props) => {
       // {/* -----we are using books from the states */}
     <>
       <Router >
+
         <Route exact path="/" render={() => (
           <>
             <Header />
             {/* {findbooks} is the value of the function findBooks */}
+            {/* <Flash /> */}
+            {
+              flash
+              ?<Flash />
+              : null
+            }
+            
             <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
             <BookList books={books}  addBook={addBook}/>
           </>
@@ -63,6 +89,7 @@ const App = (props) => {
   );
 }
 export default App;
+export let bookAdded;
 
 
 
