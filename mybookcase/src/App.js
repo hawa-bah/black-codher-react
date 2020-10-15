@@ -12,6 +12,8 @@ const App = (props) => {
   //-- data is the first initial state
   const [books, setBooks] = useState(data);
   const [keyword, setKeyword] = useState('');
+  const [bookCase, setBookCase] = useState([]);
+
 
 
   function addBook(title, id) {
@@ -20,6 +22,28 @@ const App = (props) => {
     const newBookList = books.filter(book => book.id !== id);
     setBooks(newBookList);
     console.log(`The Book '${title}' was clicked`);
+
+    const chosenBook = books.filter(book => book.id === id);
+    setBookCase([...bookCase, ...chosenBook]);
+
+
+    // const remainingBooks = [];
+    // let chosenBook = null;
+    // books.forEach((book) => {
+    //   if(book.id !== id) {
+    //     remainingBooks.push(book);
+    //   } else {
+    //     chosenBook = book;
+    //   }
+    // });
+    // setBooks(remainingBooks);
+    // setBookCase([...bookCase, chosenBook]);
+  }
+
+  function removeBook(id) {
+    const newBookCaseList = bookCase.filter(book => book.id !== id);
+    // const newBookCaseList = books.filter(book => book.id !== id);
+    setBookCase(newBookCaseList)
   }
 
   async function findBooks (value) {
@@ -48,6 +72,9 @@ const App = (props) => {
         <Route exact path="/bookcase" render={() => (
           <>
             <Header />
+            {/* maybe add a remove functionality instead of add */}
+            <BookList books={bookCase} removeBook={removeBook} />
+
           </>
         )} />
 

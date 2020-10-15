@@ -26,7 +26,15 @@ const Book = (props) => {
                 <p>{listPrice && listPrice.amount}</p>
                 {/* <p>{listPrice.amount}</p> */}
                 <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
-                <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button>
+                {/* add another props.removeBook */}
+                {/* the button only appears if addBook works */}
+                {props.addBook && (
+                <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button>)}
+
+                {props.removeBook && (
+                <button 
+                    className="btnRemove btnbook" 
+                    onClick={() => props.removeBook(id)}>remove</button>)}
                 <Button>Btn2</Button>
             </div>
             
