@@ -8,6 +8,10 @@ import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
 
+import Flash from './components/Flash';
+import Alert from '@material-ui/lab/Alert';
+import Fade from '@material-ui/core/Fade';
+
 const App = (props) => {
   //-- data is the first initial state
   const [books, setBooks] = useState(data);
@@ -15,13 +19,21 @@ const App = (props) => {
   const [bookCase, setBookCase] = useState([]);
 
 
+  const [flash, setFlash] = useState(null);
+  // the title that has been added:
+  const [bookTitleAdded, setBookTitleAdded] = useState('');
+
+
 
   function addBook(title, id) {
 // ex.4
 // check filter if it's not maching 
+
+    //we are deleating the book from the booksList everytime it's added
     const newBookList = books.filter(book => book.id !== id);
     setBooks(newBookList);
     console.log(`The Book '${title}' was clicked`);
+
 
     const chosenBook = books.filter(book => book.id === id);
     setBookCase([...bookCase, ...chosenBook]);
@@ -44,8 +56,24 @@ const App = (props) => {
     const newBookCaseList = bookCase.filter(book => book.id !== id);
     // const newBookCaseList = books.filter(book => book.id !== id);
     setBookCase(newBookCaseList)
+
+
   }
 
+  function createFlash(title, id) {
+    setFlash(true);
+    setTimeout(() => {
+      setFlash(null);
+    }, 2000);
+
+    console.log(`The Flag '${title}' is working`);
+
+    // let bookAdded = title};
+    setBookTitleAdded(title)
+
+  }
+  
+ // creating a function
   async function findBooks (value) {
     //ex.2 sess.7. doing the search books api
   
@@ -63,9 +91,20 @@ const App = (props) => {
         <Route exact path="/" render={() => (
           <>
             <Header />
+            <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
+
+            {/* {
+              flash
+              ?(<Fade in={flash} timeout={{ enter: 300, exit: 1000 }}>
+                  <Alert style={{position: "fixed"}} > the book {bookTitleAdded} has been added</Alert>
+                </Fade>)
+              : null
+            } */}
+            
             {/* {findbooks} is the value of the function findBooks */}
             <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
-            <BookList books={books}  addBook={addBook}/>
+            {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
+            <BookList books={books}  addBook={addBook} createFlash={createFlash}/>
           </>
         )} />
 
@@ -90,6 +129,7 @@ const App = (props) => {
   );
 }
 export default App;
+// export default bookAdded;
 
 
 

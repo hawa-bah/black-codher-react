@@ -4,7 +4,7 @@ import './Book.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-//-- this is a functional component
+
 const Book = (props) => {
     let {id, 
         volumeInfo: {title, authors, description, imageLinks: {smallThumbnail, thumbnail}},
@@ -29,7 +29,7 @@ const Book = (props) => {
                 {/* add another props.removeBook */}
                 {/* the button only appears if addBook works */}
                 {props.addBook && (
-                <button className="btnAdd btnbook" onClick={() => props.addBook(title, id)}>Add +</button>)}
+                <button className="btnAdd btnbook" onClick={() => {props.addBook(title, id); props.createFlash(title,id)}}>Add +</button>)}
 
                 {props.removeBook && (
                 <button 
