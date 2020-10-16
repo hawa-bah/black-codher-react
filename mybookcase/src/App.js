@@ -18,6 +18,8 @@ const App = (props) => {
   const [keyword, setKeyword] = useState('');
 
   const [flash, setFlash] = useState(null);
+  // the title that has been added:
+  const [bookTitleAdded, setBookTitleAdded] = useState('');
 
 
 
@@ -49,6 +51,7 @@ const App = (props) => {
     console.log(`The Flag '${title}' is working`);
 
     // let bookAdded = title};
+    setBookTitleAdded(title)
 
   }
   
@@ -65,24 +68,20 @@ const App = (props) => {
 
   return(
       // {/* -----we are using books from the states */}
-
-
     <>
       <Router >
-
         <Route exact path="/" render={() => (
           <>
             <Header />
-            
-            {/* <Flash /> */}
+            <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
 
-            {
+            {/* {
               flash
               ?(<Fade in={flash} timeout={{ enter: 300, exit: 1000 }}>
-                  <Alert style={{position: "fixed"}} > the book {} has been added</Alert>
+                  <Alert style={{position: "fixed"}} > the book {bookTitleAdded} has been added</Alert>
                 </Fade>)
               : null
-            }
+            } */}
             
             {/* {findbooks} is the value of the function findBooks */}
             <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>

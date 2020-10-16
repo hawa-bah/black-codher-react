@@ -10,7 +10,12 @@ const BookList = (props) => {
             <div className="BookListDiv">
                 
                 {props.books.map((book) => (
-                    <Book key={book.id} book={book} addBook={props.addBook} createFlash={props.createFlash}/>
+                    <Book 
+                        key={book.id} 
+                        book={book} 
+                        addBook={props.addBook} 
+                        createFlash={props.createFlash}
+                    />
                 ))}  
             </div>                        
         </React.Fragment>

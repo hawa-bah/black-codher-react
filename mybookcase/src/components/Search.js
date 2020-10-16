@@ -26,7 +26,6 @@ const Search = (props) => {
                 <input type="submit" value="Submit" />
                 <p>{keyword  && 'Searching for keyword:' + keyword}</p>
             </label>
-            
         </form> */
         <Form onSubmit={handleSubmit} >
             <Form.Group controlId="searchKeyword">

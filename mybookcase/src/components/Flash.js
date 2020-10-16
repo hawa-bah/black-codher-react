@@ -6,14 +6,17 @@ import Fade from '@material-ui/core/Fade';
 import bookAdded from '../App.js'
 
 const Flash = (props) => {
-    const [flash, setFlash] = useState(null);
+
 
 
     return (
         <div>
             {
-            flash
-            ?(<Alert style={{position: "fixed"}} > the book Component{} has been added</Alert>)
+            props.flash
+            ?(<Alert style={{position: "fixed"}} > 
+                    FROM THE COMPONENT: the book {props.bookTitleAdded} has been added
+                </Alert>
+                )
             : null
             }
         </div>
