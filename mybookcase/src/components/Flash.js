@@ -19,9 +19,7 @@ const Flash = (props) => {
                 )
             : null
             }
-        </div>
-
-        
+        </div>      
     )
 };
 
