@@ -14,8 +14,10 @@ import Fade from '@material-ui/core/Fade';
 
 const App = (props) => {
   //-- data is the first initial state
+  // THIS ARE THE BOOKS AT HOME
   const [books, setBooks] = useState(data);
   const [keyword, setKeyword] = useState('');
+  // THIS ARE THE BOOKS AT THE BOOKCASE
   const [bookCase, setBookCase] = useState([]);
 
 
@@ -38,7 +40,7 @@ const App = (props) => {
     const chosenBook = books.filter(book => book.id === id);
     setBookCase([...bookCase, ...chosenBook]);
 
-
+// === THIS IS ANOTHER WAY OF DOING IT
     // const remainingBooks = [];
     // let chosenBook = null;
     // books.forEach((book) => {
@@ -56,7 +58,9 @@ const App = (props) => {
     const newBookCaseList = bookCase.filter(book => book.id !== id);
     // const newBookCaseList = books.filter(book => book.id !== id);
     setBookCase(newBookCaseList)
-
+    // WE ALSO WANT TO PUT THE BOOK BACK TO HOME ONCE IT HAS BEEN REMOVED FROM BOOKCASE
+    const removedBook = bookCase.filter(book => book.id === id);
+    setBooks([...books, ...removedBook]);
 
   }
 
@@ -104,7 +108,7 @@ const App = (props) => {
             {/* {findbooks} is the value of the function findBooks */}
             <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
-            <BookList books={books}  addBook={addBook} createFlash={createFlash}/>
+            <BookList books={books}  addBook={addBook} createFlash={createFlash} />
           </>
         )} />
 

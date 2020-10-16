@@ -13,7 +13,8 @@ const BookList = (props) => {
                     <Book 
                         key={book.id} 
                         book={book} 
-                        addBook={props.addBook} 
+                        addBook={props.addBook}
+                        removeBook={props.removeBook} 
                         createFlash={props.createFlash}
                     />
                 ))}  

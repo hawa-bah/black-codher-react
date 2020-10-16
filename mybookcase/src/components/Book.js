@@ -35,7 +35,7 @@ const Book = (props) => {
                 <button 
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
-                <Button>Btn2</Button>
+                {/* <Button>Btn2</Button> */}
             </div>
             
             <p className="BookDescp">{description}</p>
