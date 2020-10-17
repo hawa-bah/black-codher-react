@@ -30,8 +30,23 @@ const Search = (props) => {
         <Form onSubmit={handleSubmit} >
             <Form.Group controlId="searchKeyword">
                 <Form.Label>Enter Search</Form.Label>
-                <Form.Control type="keyword" placeholder="Enter keyword" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
+                <Form.Control 
+                    type="keyword" 
+                    placeholder="Enter keyword" 
+                    value={keyword} 
+                    onChange={(e) => setKeyword(e.target.value)} 
+                />
             </Form.Group>
+            <Form.Group controlId="searchBy">
+                <Form.Label>Search By</Form.Label>
+                <Form.Control as="select">
+                    <option value="Author">Author</option>
+                    <option value="Title">Title</option>
+                    <option value="Description">In the description</option>
+            
+                </Form.Control>
+            </Form.Group>
+
 
             <Button variant="primary" type="submit" >
             Submit

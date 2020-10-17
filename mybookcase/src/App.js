@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -78,15 +78,27 @@ const App = (props) => {
   }
   
  // creating a function
-  async function findBooks (value) {
-    //ex.2 sess.7. doing the search books api
+  async function findBooks (term) {
   
-    const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+
+    
+
+  //ex.2 sess.7. doing the search books api
+  const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
     
     if(!results.error){
     setBooks(results.items);
     }
   };
+
+  
+
+  // useEffect is what happends when everything has been rendered 
+  useEffect(() => {
+    let countBookCase = bookCase.length;
+    document.title = `${countBookCase} Book(s) in your bookCase`
+  
+  });
 
   return(
       // {/* -----we are using books from the states */}
