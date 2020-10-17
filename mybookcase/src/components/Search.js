@@ -9,12 +9,12 @@ import './Search.css';
 
 const Search = (props) => {
     const [keyword, setKeyword] = useState('');
-    
+    const [searchType, setSearchType] = useState('');
 
     function handleSubmit(event){
         event.preventDefault();
         //
-        props.findBooks(keyword);
+        props.findBooks(keyword, searchType);
     };
     
     return(
@@ -39,10 +39,13 @@ const Search = (props) => {
             </Form.Group>
             <Form.Group controlId="searchBy">
                 <Form.Label>Search By</Form.Label>
-                <Form.Control as="select">
+                <Form.Control 
+                    as="select" 
+                    value={searchType}
+                    onChange={(e) => setSearchType(e.target.value)}>
                     <option value="Author">Author</option>
                     <option value="Title">Title</option>
-                    <option value="Description">In the description</option>
+                    <option value="Subject">Subject</option>
             
                 </Form.Control>
             </Form.Group>

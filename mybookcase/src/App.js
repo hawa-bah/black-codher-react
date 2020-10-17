@@ -16,7 +16,10 @@ const App = (props) => {
   //-- data is the first initial state
   // THIS ARE THE BOOKS AT HOME
   const [books, setBooks] = useState(data);
+  // states fro search
   const [keyword, setKeyword] = useState('');
+  const [searchType, setSearchType] = useState('');
+
   // THIS ARE THE BOOKS AT THE BOOKCASE
   const [bookCase, setBookCase] = useState([]);
 
@@ -78,20 +81,42 @@ const App = (props) => {
   }
   
  // creating a function
-  async function findBooks (term) {
+  async function findBooks (term, searchType) {
   
+    switch(searchType){
+      case "Author":
+        console.log("author");
 
-    
+        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results.error){
+        setBooks(results.items);
+        }};
+        break;
+      case "Title":
+        console.log("Title");
+        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results.error){
+        setBooks(results.items);
+        }};
+        break;
+      case "Subject":
+        console.log("subject");
+        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results.error){
+        setBooks(results.items);
+        }};
+        break;
+      default:
+        console.log("default in switch is working");
 
-  //ex.2 sess.7. doing the search books api
-  const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-    
-    if(!results.error){
-    setBooks(results.items);
     }
+  //ex.2 sess.7. doing the search books api
+    // const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+    
+    // if(!results.error){
+    // setBooks(results.items);
+    // }
   };
-
-  
 
   // useEffect is what happends when everything has been rendered 
   useEffect(() => {
@@ -118,7 +143,13 @@ const App = (props) => {
             } */}
             
             {/* {findbooks} is the value of the function findBooks */}
-            <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
+            <Search 
+              findBooks={findBooks} 
+              keyword={keyword} 
+              setKeyword={setKeyword}
+              searchType={searchType}
+              setSearchType={setSearchType}
+            />
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
             <BookList books={books}  addBook={addBook} createFlash={createFlash} />
           </>
