@@ -7,6 +7,7 @@ import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
+import Paggination from './components/Paggination.js';
 
 import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';
@@ -152,6 +153,7 @@ const App = (props) => {
             />
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
             <BookList books={books}  addBook={addBook} createFlash={createFlash} />
+            <Paggination />
           </>
         )} />
 
