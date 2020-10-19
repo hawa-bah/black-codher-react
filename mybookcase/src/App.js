@@ -195,7 +195,8 @@ const App = (props) => {
               renderedBooks={renderedBooks}
               itemsCountPerPage={itemsCountPerPage} 
               activePage={activePage}
-              handlePageChange={handlePageChange}/>
+              handlePageChange={handlePageChange}
+            />
           </>
         )} />
 
@@ -203,7 +204,13 @@ const App = (props) => {
           <>
             <Header />
             {/* maybe add a remove functionality instead of add */}
-            <BookList books={bookCase} removeBook={removeBook} />
+            <BookList 
+              books={bookCase} 
+              removeBook={removeBook} 
+              renderedBooks={renderedBooks}
+              itemsCountPerPage={itemsCountPerPage} 
+              activePage={activePage}
+              handlePageChange={handlePageChange}/>
 
           </>
         )} />
