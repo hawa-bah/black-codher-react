@@ -43,9 +43,10 @@ const Search = (props) => {
                     as="select" 
                     value={searchType}
                     onChange={(e) => setSearchType(e.target.value)}>
-                    <option value="Author">Author</option>
-                    <option value="Title">Title</option>
-                    <option value="Subject">Subject</option>
+                        <option value="Select">Select the search type</option>
+                        <option value="Author">Author</option>
+                        <option value="Title">Title</option>
+                        <option value="Subject">Subject</option>
             
                 </Form.Control>
             </Form.Group>

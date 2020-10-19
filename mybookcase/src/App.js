@@ -15,19 +15,23 @@ import Fade from '@material-ui/core/Fade';
 
 const App = (props) => {
   //-- data is the first initial state
-  // THIS ARE THE BOOKS AT HOME
+  // THESE ARE THE BOOKS AT HOME
   const [books, setBooks] = useState(data);
-  // states fro search
+  // states for search
   const [keyword, setKeyword] = useState('');
   const [searchType, setSearchType] = useState('');
 
-  // THIS ARE THE BOOKS AT THE BOOKCASE
+  // THESE ARE THE BOOKS AT THE BOOKCASE
   const [bookCase, setBookCase] = useState([]);
-
-
+  // 
   const [flash, setFlash] = useState(null);
   // the title that has been added:
   const [bookTitleAdded, setBookTitleAdded] = useState('');
+  // I might use this later 
+  // const [loading, setLoading] = useState('false');
+  const [numBooksPerPage, setnumBooksPerPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numBtnsPage] = useState(8);
 
 
 
@@ -83,29 +87,49 @@ const App = (props) => {
   
  // creating a function
   async function findBooks (term, searchType) {
+
   
     switch(searchType){
       case "Author":
         console.log("author");
+        console.log(term);
 
-        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results.error){
-        setBooks(results.items);
-        }};
+        // const results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());    
+        // if(!results1.error){
+        // setBooks(results1.items);
+        // }
+
+        let results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results1.error){
+        setBooks(results1.items);
+        }
         break;
       case "Title":
         console.log("Title");
-        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results.error){
-        setBooks(results.items);
-        }};
+        console.log(term);
+
+        let results2 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+intitle:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results2.error){
+        setBooks(results2.items);
+        }
+
+        // const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q='${term}'&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+    
+        // if(!results.error){
+        // setBooks(results.items);
+        // }
         break;
       case "Subject":
         console.log("subject");
-        {let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results.error){
-        setBooks(results.items);
-        }};
+        console.log(term);
+        let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        if(!results3.error){
+        setBooks(results3.items);
+        }
+        // let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        // if(!results3.error){
+        // setBooks(results3.items);
+        // }
         break;
       default:
         console.log("default in switch is working");
