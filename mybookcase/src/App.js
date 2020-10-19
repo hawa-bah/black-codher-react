@@ -29,10 +29,21 @@ const App = (props) => {
   const [bookTitleAdded, setBookTitleAdded] = useState('');
   // I might use this later 
   // const [loading, setLoading] = useState('false');
-  const [numBooksPerPage, setnumBooksPerPage] = useState(3);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [numBtnsPage] = useState(8);
+  const [itemsCountPerPage, setItemsPerPage] = useState(4);
+  const [activePage, setActivePage] = useState(2);
+  // const [pageRangeDisplayed] = useState(8);
 
+  const indexOfLastBook = activePage * itemsCountPerPage;
+  console.log(indexOfLastBook);
+  const indexOfFirstBook = indexOfLastBook - itemsCountPerPage;
+  const renderedBooks = books.slice(indexOfFirstBook, indexOfLastBook);
+  console.log(books.length);
+
+  // function for page
+  const handlePageChange = (pageNumber)=> {
+    console.log(`active page is ${pageNumber}`);
+    setActivePage(pageNumber);
+  };
 
 
   function addBook(title, id) {
@@ -176,8 +187,15 @@ const App = (props) => {
               setSearchType={setSearchType}
             />
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
-            <BookList books={books}  addBook={addBook} createFlash={createFlash} />
-            <Paggination />
+            <BookList 
+              books={books}  
+              addBook={addBook} 
+              createFlash={createFlash} 
+              // pageRangeDisplayed={pageRangeDisplayed}
+              renderedBooks={renderedBooks}
+              itemsCountPerPage={itemsCountPerPage} 
+              activePage={activePage}
+              handlePageChange={handlePageChange}/>
           </>
         )} />
 
