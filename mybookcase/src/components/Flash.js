@@ -14,7 +14,7 @@ const Flash = (props) => {
             {
             props.flash
             ?(<Alert style={{position: "fixed"}} > 
-                    FROM THE COMPONENT: the book {props.bookTitleAdded} has been added
+                    The book <b>{props.bookTitleAdded}</b> has been added
                 </Alert>
                 )
             : null

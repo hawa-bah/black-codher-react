@@ -26,7 +26,15 @@ const About = () =>{
                         <p>Click on the <span className="btnAdd">Add +</span> button to add a book to your bookcase. Use the search bar to find the latest books by name, author or description.</p>
                     </div>
                     <div className="gifDiv">
-                        <iframe className="gifBrain" title="gif" src="https://giphy.com/embed/LpiVeIRgrqVsZJpM5H" width="200" height="200" frameBorder="0" className="giphy-embed" allowFullScreen><p><a href="https://giphy.com/stickers/hungry-read-learn-LpiVeIRgrqVsZJpM5H">via GIPHY</a></p></iframe>
+                        <iframe 
+                            className="gifBrain" 
+                            title="gif" 
+                            src="https://giphy.com/embed/LpiVeIRgrqVsZJpM5H" 
+                            width="200" height="200" frameBorder="0" className="giphy-embed" allowFullScreen>
+                                <p>
+                                    {/* <a href="https://giphy.com/stickers/hungry-read-learn-LpiVeIRgrqVsZJpM5H">via GIPHY</a> */}
+                                </p>
+                        </iframe>
                     </div>
                 </div> 
                 <img className="imgBooks" src="/img/booksOpen.jpg" alt="booksOpen"/>

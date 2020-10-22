@@ -44,7 +44,6 @@ const App = (props) => {
     setBooks(newBookList);
     console.log(`The Book '${title}' was clicked`);
 
-
     const chosenBook = books.filter(book => book.id === id);
     setBookCase([...bookCase, ...chosenBook]);
 
@@ -125,7 +124,7 @@ const App = (props) => {
         let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
         if(!results3.error){
         setBooks(results3.items);
-        }
+        }else{return "no books found"}
         // let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
         // if(!results3.error){
         // setBooks(results3.items);
@@ -168,6 +167,7 @@ const App = (props) => {
             } */}
             
             {/* {findbooks} is the value of the function findBooks */}
+            <p>{bookCase.length}</p>
             <Search 
               findBooks={findBooks} 
               keyword={keyword} 
@@ -186,7 +186,6 @@ const App = (props) => {
             <Header />
             {/* maybe add a remove functionality instead of add */}
             <BookList books={bookCase} removeBook={removeBook} />
-
           </>
         )} />
 
@@ -196,6 +195,11 @@ const App = (props) => {
           </>
         )} />
 
+        <Route exact path="/contact" render={() => (
+          <>
+            <About />
+          </>
+        )} />
       </Router>
     </>
 
