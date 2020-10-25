@@ -93,12 +93,7 @@ const App = (props) => {
         console.log("author");
         console.log(term);
 
-        // const results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());    
-        // if(!results1.error){
-        // setBooks(results1.items);
-        // }
-
-        let results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
+        let results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
         if(!results1.error){
         setBooks(results1.items);
         }
@@ -112,11 +107,6 @@ const App = (props) => {
         setBooks(results2.items);
         }
 
-        // const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q='${term}'&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-    
-        // if(!results.error){
-        // setBooks(results.items);
-        // }
         break;
       case "Subject":
         console.log("subject");
@@ -124,11 +114,12 @@ const App = (props) => {
         let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
         if(!results3.error){
         setBooks(results3.items);
-        }else{return "no books found"}
-        // let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        // if(!results3.error){
-        // setBooks(results3.items);
-        // }
+        }
+        //testing what happends when there are no books to display
+        if(books.length=0){
+          setBooks( [... books, ..."books not found" ]);
+        }
+
         break;
       default:
         console.log("default in switch is working");
