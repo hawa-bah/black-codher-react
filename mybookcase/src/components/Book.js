@@ -4,6 +4,7 @@ import './Book.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import HeartBtn from './HeartBtn.js'
 
 const Book = (props) => {
     let {id, 
@@ -37,6 +38,8 @@ const Book = (props) => {
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
                 {/* <Button>Btn2</Button> */}
+
+                < HeartBtn />
             </div>
             
             <p className="BookDescp">{description}</p>

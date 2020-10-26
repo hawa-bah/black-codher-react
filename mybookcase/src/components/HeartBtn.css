@@ -1,0 +1,41 @@
+.HeartBtn-content{
+    border: 2px solid grey;
+    padding: 13px 16px;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+}
+.HeartBtn-content .Heart1 {
+    height: 90px;
+    width: 90px;
+    border:2px solid indianred;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+    /* background-image: no-reapet; */
+    background-position: left;
+    background-size: 2900%;
+    /* position: absolute;
+    top: 50%;
+    left: 21%;
+    transform: translate(-50%, -50%); */
+}
+
+
+[id='toggle-heart'] {
+    position: absolute;
+    left: -100vw;
+}
+.toggle-heart:checked + label {
+          color: #e2264d;
+      }
+
+  
+  [for='toggle-heart'] {
+      align-self: center;
+      color: #aab8c2;
+      font-size: 2em;
+      cursor: pointer;
+  }
+
+@keyframes heart {
+	0%, 15% { font-size: 0; }
+}
