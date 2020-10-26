@@ -32,6 +32,8 @@ const BookList = (props) => {
                         addBook={props.addBook}
                         removeBook={props.removeBook} 
                         createFlash={props.createFlash}
+                        isClick={props.isClick}
+                        setClick={props.setClick}
                     />
                 ))}  
             </div>   

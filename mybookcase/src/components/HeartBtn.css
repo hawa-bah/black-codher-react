@@ -1,5 +1,5 @@
-.HeartBtn-content{
-    border: 2px solid grey;
+/*.HeartBtn-content{
+     border: 2px solid grey;
     padding: 13px 16px;
     border-radius: 5px;
     display: flex;
@@ -10,32 +10,77 @@
     width: 90px;
     border:2px solid indianred;
     background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
-    /* background-image: no-reapet; */
+    background-image: no-reapet; 
     background-position: left;
-    background-size: 2900%;
+    background-size: 2900%; 
     /* position: absolute;
     top: 50%;
     left: 21%;
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%); 
+} */
+
+
+
+
+/* #toggle-heart:checked {
+    color: indianred;
 }
-
-
-[id='toggle-heart'] {
+#toggle-heart:not(:checked){
+    color: grey;
+} */
+ [id='toggle-heart'] {
     position: absolute;
     left: -100vw;
-}
-.toggle-heart:checked + label {
-          color: #e2264d;
-      }
-
-  
-  [for='toggle-heart'] {
-      align-self: center;
-      color: #aab8c2;
-      font-size: 2em;
-      cursor: pointer;
   }
+[id='toggle-heart']:checked + label {
+    color: #e2264d;
+    will-change: font-size;
+    animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+  }
+[for='toggle-heart']:not(:checked) {
+    align-self: center;
+    color: #aab8c2;
+    font-size: 2em;
+    cursor: pointer;
+ }
+/* [for='toggle-heart'] {
+    align-self: center;
+    color: #aab8c2;
+    font-size: 2em;
+    cursor: pointer;
+ } */
+   @keyframes heart {
+    0%, 15% {
+      font-size: 0;
+    }
+  }  
 
-@keyframes heart {
-	0%, 15% { font-size: 0; }
+/* // TWITTER HEART */
+ /* .heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
 }
+ .is-active {
+    transition-duration: 1s;
+    background-position: -2800px 0;
+  } */
+
+
+/* // BASIC */
+/* body {
+  background: linear-gradient(135deg, #121721 0%, #000000 100%) fixed;
+  color: #FFF;
+  font: 300 16px/1.5 "Open Sans", sans-serif;
+} */
+
+/* .stage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */

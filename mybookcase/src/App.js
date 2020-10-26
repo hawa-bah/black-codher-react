@@ -13,7 +13,15 @@ import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';
 import Fade from '@material-ui/core/Fade';
 
+import Heart from "react-animated-heart";
+
+
+
+
 const App = (props) => {
+
+  const [isClick, setClick] = useState(false);
+
   //-- data is the first initial state
   // THESE ARE THE BOOKS AT HOME
   const [books, setBooks] = useState(data);
@@ -187,6 +195,8 @@ const App = (props) => {
               itemsCountPerPage={itemsCountPerPage} 
               activePage={activePage}
               handlePageChange={handlePageChange}
+              isClick={isClick}
+              setClick={setClick}
             />
           </>
         )} />

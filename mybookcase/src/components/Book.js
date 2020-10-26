@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import HeartBtn from './HeartBtn.js'
+// import './HeartBtn.css';
+import Heart from "react-animated-heart";
+
+
 
 const Book = (props) => {
     let {id, 
@@ -16,6 +20,7 @@ const Book = (props) => {
     // function addBook (title) {
     //     console.log(`The Book '${title}' was clicked`);
     // }
+    const [isClick, setClick] = useState(false);
 
 
     return (
@@ -38,8 +43,11 @@ const Book = (props) => {
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
                 {/* <Button>Btn2</Button> */}
-
-                < HeartBtn />
+                <Heart isClick={isClick} onClick={() => setClick(!isClick)} />
+                
+                {/* < HeartBtn onClick={() => console.log('hello')}/> */}
+                {/* <input id="toggle-heart" type="checkbox"/>
+                <label for="toggle-heart">❤</label>  */}
             </div>
             
             <p className="BookDescp">{description}</p>
