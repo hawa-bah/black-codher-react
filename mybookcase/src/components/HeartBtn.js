@@ -10,6 +10,8 @@ const HeartBtn = () => {
                     <div className="Heart1"></div>
                 </div>
             </div>
+            <input id="toggle-heart" type="checkbox"/>
+            <label for="toggle-heart">❤</label>
         
 
         </React.Fragment>
@@ -17,3 +19,5 @@ const HeartBtn = () => {
     )
 }
 export default HeartBtn;
+
+// https://codepen.io/mindstorm/pen/aZZvKq
