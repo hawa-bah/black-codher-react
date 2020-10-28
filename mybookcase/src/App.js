@@ -30,7 +30,7 @@ const App = (props) => {
   // I might use this later 
   // const [loading, setLoading] = useState('false');
   const [itemsCountPerPage, setItemsPerPage] = useState(4);
-  const [activePage, setActivePage] = useState(2);
+  const [activePage, setActivePage] = useState(1);
   // const [pageRangeDisplayed] = useState(8);
 
   const indexOfLastBook = activePage * itemsCountPerPage;
@@ -127,9 +127,9 @@ const App = (props) => {
         setBooks(results3.items);
         }
         //testing what happends when there are no books to display
-        if(books.length=0){
-          setBooks( [... books, ..."books not found" ]);
-        }
+        // if(books.length=0){
+        //   setBooks( [... books, ..."books not found" ]);
+        // }
 
         break;
       default:
@@ -212,11 +212,11 @@ const App = (props) => {
           </>
         )} />
 
-        <Route exact path="/contact" render={() => (
+        {/* <Route exact path="/contact" render={() => (
           <>
             <About />
           </>
-        )} />
+        )} /> */}
       </Router>
     </>
 
