@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
-// import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import HeartBtn from './HeartBtn.js'
@@ -11,37 +10,23 @@ const Book = (props) => {
         volumeInfo: {title, authors, description, imageLinks: {smallThumbnail, thumbnail}},
         saleInfo: {listPrice}
     } = props.book;
-
-    // we are moving this to App.js in sess.5 
-    // function addBook (title) {
-    //     console.log(`The Book '${title}' was clicked`);
-    // }
-
-
     return (
         <div className="BookDiv">
             <div className="BookSub1">
                 <h2>{title}</h2>
                 <p>by {authors? authors.join(',') : 'No authors'}</p>
-                {/* ---in here we could have a ternary operators,  */}
                 <p>{listPrice && listPrice.amount}</p>
                 {/* <p>{listPrice.amount}</p> */}
                 <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
-                {/* <img className="imgBook" src={ thumbnail} alt={title}/> */}
-                {/* add another props.removeBook */}
-                {/* the button only appears if addBook works */}
                 {props.addBook && (
                 <button className="btnAdd btnbook" onClick={() => {props.addBook(title, id); props.createFlash(title,id)}}>Add +</button>)}
-
                 {props.removeBook && (
                 <button 
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
                 {/* <Button>Btn2</Button> */}
-
                 < HeartBtn />
             </div>
-            
             <p className="BookDescp">{description}</p>
         </div>
     );

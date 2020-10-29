@@ -8,24 +8,11 @@ import Pagination from "react-js-pagination"
 // import ReactDOM from 'react-dom';
 
 const BookList = (props) => {
-
-    // const [itemsCountPerPage, setItemsPerPage] = useState(5);
-    // const [activePage, setActivePage] = useState(2);
-    // const [pageRangeDisplayed] = useState(8);
-
-    // const handlePageChange = (pageNumber)=> {
-    //     console.log(`active page is ${pageNumber}`);
-    //     setActivePage(pageNumber);
-    // };
-  
-
-
-
     return (
         <React.Fragment >
             <div className="BookListDiv">
                 
-                {props.renderedBooks.map((book) => (
+                {props.renderedBooks && (props.renderedBooks.map((book) => (
                     <Book 
                         key={book.id} 
                         book={book} 
@@ -33,7 +20,19 @@ const BookList = (props) => {
                         removeBook={props.removeBook} 
                         createFlash={props.createFlash}
                     />
-                ))}  
+                )))}
+                {/* { props.renderedBooksBookcase && (
+                    props.renderedBooksBookcase.map((book) => (
+                        <Book 
+                            key={book.id} 
+                            book={book} 
+                            addBook={props.addBook}
+                            removeBook={props.removeBook} 
+                            createFlash={props.createFlash}
+                        />
+                    ))
+                )
+                }   */}
             </div>   
             
             <Pagination
@@ -49,3 +48,25 @@ const BookList = (props) => {
 }
 
 export default BookList;
+
+
+    // const [itemsCountPerPage, setItemsPerPage] = useState(5);
+    // const [activePage, setActivePage] = useState(2);
+    // const [pageRangeDisplayed] = useState(8);
+    // const handlePageChange = (pageNumber)=> {
+    //     console.log(`active page is ${pageNumber}`);
+    //     setActivePage(pageNumber);
+    // };
+ 
+
+
+    // before I made changes with renderedBooksBookcase
+// {props.renderedBooks.map((book) => (
+//         <Book 
+//         key={book.id} 
+//         book={book} 
+//         addBook={props.addBook}
+//         removeBook={props.removeBook} 
+//         createFlash={props.createFlash}
+//     />
+// ))}
