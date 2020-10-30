@@ -1,15 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import HeartBtn from './HeartBtn.js'
+// import HeartBtn from './HeartBtn.js'
+import Heart from "react-animated-heart"
 
 const Book = (props) => {
+    
     let {id, 
         volumeInfo: {title, authors, description, imageLinks: {smallThumbnail, thumbnail}},
         saleInfo: {listPrice}
     } = props.book;
+
+    const [isClick, setClick] = useState(false);
+    // function handleHeart(title,id) {
+    //     props.setClick(!props.isClick)
+    // }
+    function handleHeart(title,id) {
+        // this.setClick(!this.isClick);
+        console.log(`The Book '${title}' was clicked`);
+        
+          // console.log(book.id)
+          if(props.book.id == id){
+            console.log(props.book.volumeInfo.title + "and"+  title);
+            setClick(!isClick);
+        }
+    }
     return (
         <div className="BookDiv">
             <div className="BookSub1">
@@ -25,8 +42,13 @@ const Book = (props) => {
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
                 {/* <Button>Btn2</Button> */}
-                < HeartBtn />
+                {/* < HeartBtn isClick={isClick} onClick={() => setClick} /> */}
+                {/* <Heart /> */}
+                {/* <Heart isClick={props.isClick} onClick={() => props.setClick(!props.isClick)} /> */}
+                <Heart isClick={isClick} onClick={() => handleHeart(title,id)} />
+
             </div>
+
             <p className="BookDescp">{description}</p>
         </div>
     );

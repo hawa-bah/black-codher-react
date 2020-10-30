@@ -13,6 +13,8 @@ import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';
 import Fade from '@material-ui/core/Fade';
 
+import Heart from "react-animated-heart"
+
 const App = (props) => {
   //-- data is the first initial state
   // THESE ARE THE BOOKS AT HOME
@@ -20,6 +22,7 @@ const App = (props) => {
   // states for search
   const [keyword, setKeyword] = useState('');
   const [searchType, setSearchType] = useState('');
+  const [errorSearch, seterrorSearch] = useState(false);
   // THESE ARE THE BOOKS AT THE BOOKCASE
   const [bookCase, setBookCase] = useState([]);
   // 
@@ -33,8 +36,31 @@ const App = (props) => {
   // const [pageRangeDisplayed] = useState(8);
   const indexOfLastBook = activePage * itemsCountPerPage;
   const indexOfFirstBook = indexOfLastBook - itemsCountPerPage;
-  const renderedBooks = books.slice(indexOfFirstBook, indexOfLastBook);
+  //if there are books use slice
+  const renderedBooks = books && books.slice(indexOfFirstBook, indexOfLastBook);
   const renderedBooksBookcase = bookCase.slice(indexOfFirstBook, indexOfLastBook);
+  // 
+  // const [isClick, setClick] = useState('false');
+  // const [isClick, setClick] = useState(false);
+  
+  //
+//   function handleHeart(title,id) {
+//     // this.setClick(!this.isClick);
+//     console.log(`The Book '${title}' was clicked`);
+//     books.map((book) => {
+//       // console.log(book.id)
+//       if(book.id == id){
+//         console.log(book.volumeInfo.title + "and"+  title);
+//         this.setClick(!this.isClick);
+//       }else{
+//         setClick(false);
+//       }
+//     })
+//     // if( id === id ) {
+//     //   this.setClick(!this.isClick);
+
+//     // }
+// }
 
   // 
   const handlePageChange = (pageNumber)=> {
@@ -96,8 +122,11 @@ const App = (props) => {
         console.log(term);
 
         let results1 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results1.error){
+        if(!results1.error && results1.totalItems > 0){
         setBooks(results1.items);
+        seterrorSearch(false);
+        }else{
+          seterrorSearch(true);
         }
         break;
       case "Title":
@@ -105,8 +134,11 @@ const App = (props) => {
         console.log(term);
 
         let results2 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+intitle:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results2.error){
+        if(!results2.error && results2.totalItems > 0){
         setBooks(results2.items);
+        seterrorSearch(false);
+        }else{
+          seterrorSearch(true);
         }
 
         break;
@@ -114,8 +146,11 @@ const App = (props) => {
         console.log("subject");
         console.log(term);
         let results3 = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}+subject:${term}&filter=paid-ebooks&print-type=books&projection=lite`).then(res => res.json());
-        if(!results3.error){
+        if(!results3.error && results3.totalItems > 0){
         setBooks(results3.items);
+        seterrorSearch(false);
+        } else{
+          seterrorSearch(true);
         }
         //testing what happends when there are no books to display
         // if(books.length=0){
@@ -169,7 +204,13 @@ const App = (props) => {
               setSearchType={setSearchType}
             />
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
-            <BookList 
+            <div className="error">
+                {errorSearch && (
+                    <h2>There are no books found</h2>
+                )}
+            </div>
+            {!errorSearch && (
+              <BookList 
               books={books}  
               addBook={addBook} 
               createFlash={createFlash} 
@@ -178,7 +219,12 @@ const App = (props) => {
               itemsCountPerPage={itemsCountPerPage} 
               activePage={activePage}
               handlePageChange={handlePageChange}
-            />
+              // errorSearch={errorSearch}
+              seterrorSearch={seterrorSearch}
+              />
+            )}
+            
+
           </>
         )} />
 

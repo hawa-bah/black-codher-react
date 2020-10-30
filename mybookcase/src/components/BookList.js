@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Book from './Book.js';
 import './Pagination.css'
 import Pagination from "react-js-pagination"
+import Heart from "react-animated-heart"
+
 // require("bootstrap/less/bootstrap.less");
 // import Alert from '@material-ui/lab/Alert';S
 // import {BrowserRouter as Router, Route } from 'react-router-dom';
@@ -19,22 +21,19 @@ const BookList = (props) => {
                         addBook={props.addBook}
                         removeBook={props.removeBook} 
                         createFlash={props.createFlash}
+                        isClick={props.isClick}
+                        setClick={props.setClick}
+                        handleHeart={props.handleHeart}
                     />
                 )))}
-                {/* { props.renderedBooksBookcase && (
-                    props.renderedBooksBookcase.map((book) => (
-                        <Book 
-                            key={book.id} 
-                            book={book} 
-                            addBook={props.addBook}
-                            removeBook={props.removeBook} 
-                            createFlash={props.createFlash}
-                        />
-                    ))
-                )
-                }   */}
+                
             </div>   
             
+            {/* <div className="error">
+                {props.errorSearch && (
+                    <h2>There are no books found</h2>
+                )}
+            </div> */}
             <Pagination
                 activePage={props.activePage}
                 itemsCountPerPage={props.itemsCountPerPage}
