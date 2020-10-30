@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import data from './models/books.json'
+import data from './models/books.json';
+import Home from './components/Home.js'
 import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
@@ -181,19 +182,16 @@ const App = (props) => {
       // {/* -----we are using books from the states */}
     <>
       <Router >
-        <Route exact path="/" render={() => (
+        <Route exact path="/" render={() =>(
+          <React.Fragment>
+            <Home />
+          </React.Fragment>
+        )}
+        />
+        <Route exact path="/allbooks" render={() => (
           <>
             <Header />
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
-
-            {/* {
-              flash
-              ?(<Fade in={flash} timeout={{ enter: 300, exit: 1000 }}>
-                  <Alert style={{position: "fixed"}} > the book {bookTitleAdded} has been added</Alert>
-                </Fade>)
-              : null
-            } */}
-            
             {/* {findbooks} is the value of the function findBooks */}
             <p>{bookCase.length}</p>
             <Search 
