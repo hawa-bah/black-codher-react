@@ -8,7 +8,7 @@ import Header from './components/Header.js';
 import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
-import Paggination from './components/Paggination.js';
+import NumPages from './components/NumPages.js';
 
 import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';
@@ -202,6 +202,10 @@ const App = (props) => {
               searchType={searchType}
               setSearchType={setSearchType}
             />
+            <NumPages 
+              setItemsPerPage={setItemsPerPage}
+              itemsCountPerPage={itemsCountPerPage} 
+            />
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
             <div className="error">
                 {errorSearch && (
@@ -215,10 +219,10 @@ const App = (props) => {
               createFlash={createFlash} 
               // pageRangeDisplayed={pageRangeDisplayed}
               renderedBooks={renderedBooks}
-              itemsCountPerPage={itemsCountPerPage} 
+              itemsCountPerPage={itemsCountPerPage}
+              // setItemsPerPage={setItemsPerPage} 
               activePage={activePage}
               handlePageChange={handlePageChange}
-              // errorSearch={errorSearch}
               seterrorSearch={seterrorSearch}
               />
             )}
