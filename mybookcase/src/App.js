@@ -194,6 +194,7 @@ const App = (props) => {
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
             {/* {findbooks} is the value of the function findBooks */}
             <p>{bookCase.length}</p>
+            
             <Search 
               findBooks={findBooks} 
               keyword={keyword} 
