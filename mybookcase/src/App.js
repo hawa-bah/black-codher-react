@@ -234,6 +234,9 @@ const App = (props) => {
         <Route exact path="/bookcase" render={() => (
           <>
             <Header />
+            {(bookCase.length === 0)
+            ? <h2>Add some books to your bookcase</h2>
+            : <p>Total books: {bookCase.length}</p>}
             <BookList 
               books={bookCase} 
               removeBook={removeBook} 
