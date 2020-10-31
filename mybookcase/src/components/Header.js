@@ -8,7 +8,7 @@ const Header = () => {
     return (
     <React.Fragment>
         <h1>My bookcase</h1>
-        <div className="navBar">
+        <div className="navBar Home">
             <Link to="/" className="navLink">Home</Link>
             <Link to="/allbooks" className="navLink allbooks">Books</Link>
             <Link to="/bookcase" className="navLink bookLink">Bookcase</Link>

@@ -29,24 +29,26 @@ const Dropdown = () => {
 
     const[click, setClick] = useState(false);
 
-    const handleClick = () => setClick(!click);
+
+    // const handleClick = () => setClick(!click);
+    function handleClick2() {
+        setClick(!click);
+        console.log('hanle2');
+        console.log(click);
+    }
 
     return(
         <>
-            <p color={'pink'}>Testing{MenuItems.length}</p>
-            <Link 
-                className='dropdown-link' 
-                // className={'menu-link'} 
-                to='/categories' 
-                onClick={() => setClick(false)}>Drama</Link>
             <ul 
-                 onClick={handleClick}
-                 className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
+                 onClick={() => handleClick2()}
+                 className={click ? 'drop-menu' : 'drop-menu-clicked'}
+                className='test'
+
             >
-                <li color={'white'} >Testing 2</li>
-            {MenuItems.map((item,index) => (
+
+                
+             {MenuItems.map((item,index) => (
                     <>
-                     
                     <li key={index}>
                         <Link 
                             className='dropdown-link' 
@@ -56,8 +58,10 @@ const Dropdown = () => {
                     </li>
                     </>
                 )
-                )}
+                )} 
+                
             </ul>
+        
         </>
     );
 }

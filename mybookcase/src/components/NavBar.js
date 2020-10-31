@@ -17,9 +17,9 @@ const NavBar = () => {
         }else{setDropdown(true)}
         console.log('testMouseEnter');
     };
-    function onMouseOver(){
-        console.log('over')
-    }
+    // function onMouseOver(){
+    //     console.log('over')
+    // }
     const onMouseLeave = () =>{
         if(window.innerWidth < 960) { 
             setDropdown(false);
@@ -44,11 +44,13 @@ const NavBar = () => {
                 </li>
                 <li 
                     className="nav-item" 
-                    onMouseOver={onMouseOver}
-                    onMouseEnter={onMouseEnter} 
+                    // onMouseOver={onMouseOver}
+                    onClick={onMouseEnter}
+                    // onMouseEnter={onMouseEnter} 
                     onMouseLeave={onMouseLeave}
                 >
-                    <Link to="/categories" className="nav-links" onClick={closeMenu}>Categories<i className="fas fa-caret-down" /></Link>
+                    <p className="nav-links">Categories</p>
+                    {/* <Link to="/categories" className="nav-links" onClick={closeMenu}>Categories<i className="fas fa-caret-down" /></Link> */}
                     {dropdown && <Dropdown/>}
                     {console.log('dropdown =' + dropdown)}
                 </li>

@@ -1,16 +1,23 @@
-.dropdown-menu {
+.drop-menu {
     position: absolute;
     top: 80px;
     list-style: none;
     text-align: start;
-    background: purple;
+    background: blue;
+}
+.test {
+    position: absolute;
+    top: 80px;
+    list-style: none;
+    text-align: start;
+    background: blue;
 }
 .dropdown-menu li{
     background: purple;
     cursor:pointer;
 }
 
-.dropdown-menu.clicked {
+.drop-menu-clicked {
     display: none;
 }
 .dropdown-link{
@@ -20,7 +27,7 @@
     text-decoration: none;
     color: #fff;
     padding: 20px;
-    background: purple;
+    /* background: green; */
 
 }
 @media screen and (max-width: 960px) {
