@@ -9,6 +9,7 @@ import About from './pages/About.js';
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
 import NumPages from './components/NumPages.js';
+import RandomBook from './components/RandomBook.js';
 
 import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';

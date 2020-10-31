@@ -3,8 +3,10 @@ import React from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
 // import booksOpen from '../img/booksOpen.jpg';
+import RandomBook from '../components/RandomBook.js';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-const About = () =>{
+const About = (props) =>{
     return(
         <React.Fragment>
             <div className="bodyAbout">
@@ -37,8 +39,10 @@ const About = () =>{
                         </iframe>
                     </div>
                 </div> 
-                <img className="imgBooks" src="/img/booksOpen.jpg" alt="booksOpen"/>
+                <RandomBook books={props.books}/>
+                {/* <img className="imgBooks" src="/img/booksOpen.jpg" alt="booksOpen"/> */}
             </div>
+            
         </React.Fragment>
     )
 };
