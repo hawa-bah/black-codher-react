@@ -10,6 +10,7 @@ import BookList from './components/BookList.js'
 import Search from './components/Search.js';
 import NumPages from './components/NumPages.js';
 import RandomBook from './components/RandomBook.js';
+import NavBar from './components/NavBar.js'
 
 import Flash from './components/Flash';
 import Alert from '@material-ui/lab/Alert';
@@ -234,7 +235,8 @@ const App = (props) => {
 
         <Route exact path="/bookcase" render={() => (
           <>
-            <Header />
+            {/* <Header /> */}
+            <NavBar />
             {(bookCase.length === 0)
             ? <h2>Add some books to your bookcase</h2>
             : <p>Total books: {bookCase.length}</p>}
