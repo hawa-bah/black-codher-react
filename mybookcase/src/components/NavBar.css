@@ -23,7 +23,9 @@
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    /* grid-template-columns: repeat(5, auto); */
+    grid-template-columns: repeat(6, auto);
+
     grid-gap: 10px;
     list-style: none;
     text-align: center;
@@ -42,6 +44,7 @@
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    margin: 0px;
   }
   
   .nav-links:hover {

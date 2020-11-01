@@ -15,17 +15,22 @@ const NavBar = () => {
         console.log('testMouseEnter');
         if(window.innerWidth < 960) {
              setDropdown(false);
-        }else{setDropdown(true)}
+        }else{
+            setDropdown(true);
+        }
         console.log('testMouseEnter');
     };
-    function dropClick(){
-        setDropdown(!dropdown)
+    const dropClick = () => {
+        if (window.innerWidth < 960) {
+            setDropdown(!dropdown)
+        }
     }
     const onMouseLeave = () =>{
         console.log('testMouseLeave');
         if(window.innerWidth < 960) { 
             setDropdown(false);
-        }else{setDropdown(false);
+        }else{
+            setDropdown(false);
         }
     };
     
@@ -52,11 +57,12 @@ const NavBar = () => {
                     onMouseLeave={onMouseLeave}
                 >
                     <p className="nav-links categories">Categories</p>
-                    {/* <Link to="/categories" className="nav-links" onClick={closeMenu}>Categories<i className="fas fa-caret-down" /></Link> */}
                     {dropdown && <Dropdown/>}
                     {console.log('dropdown =' + dropdown)}
                 </li>
-                {dropdown && <li className="space-dropdown"></li>}
+                {/* {(dropdown || window.innerWidth < 960) && <li className="space-dropdown"></li>} */}
+                {(dropdown === (window.innerWidth < 960)) ? <li className="space-dropdown"></li> : null}
+
                 <li className="nav-item" >
                     <Link to="/bookcase" className="nav-links" onClick={closeMenu}>Bookcase</Link>
                 </li>
