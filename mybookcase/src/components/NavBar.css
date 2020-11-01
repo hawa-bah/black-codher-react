@@ -139,4 +139,7 @@
       color: #1888ff;
       transition: 250ms;
     }
+    .space-dropdown{
+      height: 350px;
+    }
   }

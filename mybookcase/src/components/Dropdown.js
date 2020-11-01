@@ -40,9 +40,10 @@ const Dropdown = () => {
     return(
         <>
             <ul 
-                 onClick={() => handleClick2()}
-                 className={click ? 'drop-menu' : 'drop-menu-clicked'}
+                //  onClick={() => handleClick2()}
+                //  className={click ? 'drop-menu' : 'drop-menu-clicked'}
                 className='test'
+                // className='nav-link' 
 
             >
 
@@ -51,7 +52,8 @@ const Dropdown = () => {
                     <>
                     <li key={index}>
                         <Link 
-                            className='dropdown-link' 
+                            className='dropdown-link'
+                            // className='nav-link' 
                             // className={'menu-link'} 
                             to={item.path} 
                             onClick={() => setClick(false)}>{item.title}</Link>
