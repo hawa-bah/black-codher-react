@@ -1,0 +1,26 @@
+.row-div {
+  width: 100%;
+}
+.row-books {
+  display: flex;
+  padding: 15px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  scrollbar-base-color: blue;
+  scrollbar-color: purple;
+
+  /* overflow: hidden; */
+}
+.row-books::-webkit-scrollbar {
+  overflow: hidden;
+}
+.row-book {
+  padding: 5px;
+  margin-left: 7px;
+  margin-top: 7px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.row-book:hover {
+  transform: scale(1.25);
+}
