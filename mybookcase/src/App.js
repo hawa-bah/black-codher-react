@@ -6,6 +6,7 @@ import data from './models/books.json';
 import Home from './components/Home.js'
 import Header from './components/Header.js';
 import About from './pages/About.js';
+import Categories from './pages/Categories.js'
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
 import NumPages from './components/NumPages.js';
@@ -155,11 +156,6 @@ const App = (props) => {
         } else{
           seterrorSearch(true);
         }
-        //testing what happends when there are no books to display
-        // if(books.length=0){
-        //   setBooks( [... books, ..."books not found" ]);
-        // }
-
         break;
       default:
         console.log("default in switch is working");
@@ -260,6 +256,13 @@ const App = (props) => {
             <About />
           </>
         )} />
+
+        <Route exact path="/categories" render={() => (
+          <>
+            <Categories />
+          </>
+        )}
+        />
 
       </Router>
     </>

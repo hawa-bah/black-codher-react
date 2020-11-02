@@ -41,10 +41,6 @@ const Book = (props) => {
                 <button 
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
-                {/* <Button>Btn2</Button> */}
-                {/* < HeartBtn isClick={isClick} onClick={() => setClick} /> */}
-                {/* <Heart /> */}
-                {/* <Heart isClick={props.isClick} onClick={() => props.setClick(!props.isClick)} /> */}
                 <Heart isClick={isClick} onClick={() => handleHeart(title,id)} />
 
             </div>

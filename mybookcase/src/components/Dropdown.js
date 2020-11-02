@@ -11,7 +11,7 @@ const MenuItems = [
     },
     {
         title:'Drama',
-        path: '/Drama',
+        path: '/Categories',
         cName: 'dropdown-link'
     },
     {
