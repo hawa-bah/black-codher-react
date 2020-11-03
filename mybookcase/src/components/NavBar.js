@@ -60,7 +60,6 @@ const NavBar = () => {
                     {dropdown && <Dropdown/>}
                     {console.log('dropdown =' + dropdown)}
                 </li>
-                {/* {(dropdown || window.innerWidth < 960) && <li className="space-dropdown"></li>} */}
                 {(dropdown === (window.innerWidth < 960)) ? 
                     <li className="space-dropdown"></li>
                     : null}

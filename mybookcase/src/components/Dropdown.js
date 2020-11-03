@@ -1,4 +1,4 @@
-import React, {useState, componentDidMount} from 'react';
+import React, {useState, componentDidMount, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 // import {MenuItems} from './MenuItems';
 import './Dropdown.css';
@@ -29,24 +29,26 @@ const MenuItems = [
         cName: 'dropdown-link'
     }
 ];
-const Dropdown = () => {
+const Dropdown = (props) => {
 
-    const[click, setClick] = useState(false);
+//    const targetRef=React.CreateRef();
 
 
     // const handleClick = () => setClick(!click);
-    function handleClick2() {
-        setClick(!click);
-        console.log('hanle2');
-        console.log(click);
-    };
+    // function handleClick2() {
+    //     setClick(!click);
+    //     console.log('hanle2');
+    //     console.log(click);
+    // };
 
-    // componentDidMount() {
-    //     // setTimeout(() => {
-    //     //     this.setState({favoritecolor: "yellow"})
-    //     //   }, 1000)
-    //     console.log(this.props)
-    // } 
+    useEffect((props) => {
+        // setTimeout(() => {
+        //     this.setState({favoritecolor: "yellow"})
+        //   }, 1000)
+        // console.log(this.props)
+    })
+
+    const[click, setClick] = useState(false);
     return(
         <>
             <ul 
@@ -65,7 +67,10 @@ const Dropdown = () => {
                                 hash: item.hash,
                                 state: {fromDashboard: true}
                             }} 
-                            onClick={() => setClick(false)}>{item.title}</Link>
+                            onClick={() => {setClick(false); 
+                            {document.getElementById(item.title).scrollIntoView()}}}
+                            // targetRef={targetRef}
+                        >{item.title}</Link>
                     </li>
                     </>
                 )
