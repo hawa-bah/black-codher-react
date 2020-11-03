@@ -10,7 +10,10 @@
   top: 50px;
   list-style: none;
   text-align: start;
-  /* background: blue; */
+  background: #190933;
+  padding: 2px;
+  /* width: 70%;
+  max-width: 960px; */
 }
 /* .dropdown-menu li {
   background: pink;
@@ -20,9 +23,13 @@
 /* .drop-menu-clicked {
   display: none;
 } */
+/* .dropdown-link-li {
+  display: flex;
+  justify-content: flex-start;
+} */
 .dropdown-link {
   display: block;
-  width: 100%;
+  width: 90%;
   height: 100%;
   text-decoration: none;
   color: #fff;
@@ -44,12 +51,13 @@
   }
   .test {
     position: absolute;
-    top: 300px;
+    top: 250px;
     list-style: none;
     text-align: start;
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background: #190933;
   }
 }

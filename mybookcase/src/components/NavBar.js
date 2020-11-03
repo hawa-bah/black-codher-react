@@ -56,7 +56,7 @@ const NavBar = () => {
                     onMouseEnter={onMouseEnter} 
                     onMouseLeave={onMouseLeave}
                 >
-                    <p className="nav-links categories">Categories</p>
+                    <p className="nav-links categories">Categories {`>`}</p>
                     {dropdown && <Dropdown/>}
                     {console.log('dropdown =' + dropdown)}
                 </li>

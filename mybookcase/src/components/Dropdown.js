@@ -57,7 +57,7 @@ const Dropdown = () => {
             >
              {MenuItems.map((item,index) => (
                     <>
-                    <li key={index} className='dropdown-links'>
+                    <li key={index} className='dropdown-link'>
                         <Link 
                             className='dropdown-link' 
                             to={{
