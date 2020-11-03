@@ -31,9 +31,9 @@ const Row = (props) => {
 
     return (
         <>
-        <div className="row-div">
+        <div className="row-div" id={props.title}>
             <h3>{props.title}({rowBooks.length})</h3>
-            <div className="row-books">
+            <div className="row-books" >
                 {rowBooks.map((book)=> (
                     <>
                         {/* <div className="row-book" onMouseEnter={()=> {setClick(true); setDesciption(book.volumeInfo.description)}} onMouseLeave={setClick(false)}> */}

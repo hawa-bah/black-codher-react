@@ -61,7 +61,9 @@ const NavBar = () => {
                     {console.log('dropdown =' + dropdown)}
                 </li>
                 {/* {(dropdown || window.innerWidth < 960) && <li className="space-dropdown"></li>} */}
-                {(dropdown === (window.innerWidth < 960)) ? <li className="space-dropdown"></li> : null}
+                {(dropdown === (window.innerWidth < 960)) ? 
+                    <li className="space-dropdown"></li>
+                    : null}
 
                 <li className="nav-item" >
                     <Link to="/bookcase" className="nav-links" onClick={closeMenu}>Bookcase</Link>
