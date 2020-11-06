@@ -1,9 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import Book from './Book.js';
+import React from 'react';
 import Alert from '@material-ui/lab/Alert';
-import Fade from '@material-ui/core/Fade';
 
-import bookAdded from '../App.js'
 
 const Flash = (props) => {
 

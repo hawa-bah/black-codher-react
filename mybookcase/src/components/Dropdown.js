@@ -1,7 +1,6 @@
 import React, {useState, componentDidMount, useEffect} from 'react';
-import { Link } from 'react-router-dom';
-// import {MenuItems} from './MenuItems';
 import './Dropdown.css';
+import { HashLink } from 'react-router-hash-link';
 
 const MenuItems = [
     {
@@ -26,6 +25,12 @@ const MenuItems = [
         title:'Self-help',
         path: '/Categories',
         hash: '#self-help',
+        cName: 'dropdown-link'
+    },
+    {
+        title:'Love',
+        path: '/Categories',
+        hash: '#Love',
         cName: 'dropdown-link'
     }
 ];
@@ -60,7 +65,7 @@ const Dropdown = (props) => {
              {MenuItems.map((item,index) => (
                     <>
                     <li key={index} className='dropdown-link'>
-                        <Link 
+                        {/* <Link 
                             className='dropdown-link' 
                             to={{
                                 pathname: item.path,
@@ -68,9 +73,19 @@ const Dropdown = (props) => {
                                 state: {fromDashboard: true}
                             }} 
                             onClick={() => {setClick(false); 
-                            {document.getElementById(item.title).scrollIntoView()}}}
+                            // {document.getElementById(item.title).scrollIntoView()}
+                        }}
                             // targetRef={targetRef}
-                        >{item.title}</Link>
+                        >{item.title}</Link> */}
+                        <HashLink 
+                            className='dropdown-link' 
+                            to={item.path+item.hash} 
+                            scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end', duration: 4000 })}
+                            onClick={() => {setClick(false); 
+                            // {document.getElementById(item.title).scrollIntoView()}
+                        }}
+                            // targetRef={targetRef}
+                        >{item.title}</HashLink>
                     </li>
                     </>
                 )

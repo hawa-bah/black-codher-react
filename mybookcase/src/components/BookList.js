@@ -1,13 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Book from './Book.js';
 import './Pagination.css'
 import Pagination from "react-js-pagination"
-import Heart from "react-animated-heart"
-
-// require("bootstrap/less/bootstrap.less");
-// import Alert from '@material-ui/lab/Alert';S
-// import {BrowserRouter as Router, Route } from 'react-router-dom';
-// import ReactDOM from 'react-dom';
+// import Heart from "react-animated-heart"
 
 const BookList = (props) => {
     return (

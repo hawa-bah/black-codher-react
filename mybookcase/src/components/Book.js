@@ -4,7 +4,7 @@ import './Book.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 // import HeartBtn from './HeartBtn.js'
-import Heart from "react-animated-heart"
+// import Heart from "react-animated-heart";
 
 const Book = (props) => {
     
@@ -22,7 +22,7 @@ const Book = (props) => {
         console.log(`The Book '${title}' was clicked`);
         
           // console.log(book.id)
-          if(props.book.id == id){
+          if(props.book.id === id){
             console.log(props.book.volumeInfo.title + "and"+  title);
             setClick(!isClick);
         }
@@ -41,7 +41,7 @@ const Book = (props) => {
                 <button 
                     className="btnRemove btnbook" 
                     onClick={() => props.removeBook(id)}>remove</button>)}
-                <Heart isClick={isClick} onClick={() => handleHeart(title,id)} />
+                {/* <Heart isClick={isClick} onClick={() => handleHeart(title,id)} /> */}
 
             </div>
 

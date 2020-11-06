@@ -1,4 +1,4 @@
-import React, {useEffect, useState, Fragment} from 'react';
+import React from 'react';
 import {Form} from 'react-bootstrap';
 
 const NumPages =  (props) => {

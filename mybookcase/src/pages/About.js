@@ -1,10 +1,7 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import './About.css';
 import { Link } from 'react-router-dom';
-// import booksOpen from '../img/booksOpen.jpg';
 import RandomBook from '../components/RandomBook.js';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 const About = (props) =>{
     return(
@@ -29,7 +26,7 @@ const About = (props) =>{
                     </div>
                     <div className="gifDiv">
                         <iframe 
-                            className="gifBrain" 
+                            // className="gifBrain" 
                             title="gif" 
                             src="https://giphy.com/embed/LpiVeIRgrqVsZJpM5H" 
                             width="200" height="200" frameBorder="0" className="giphy-embed" allowFullScreen>

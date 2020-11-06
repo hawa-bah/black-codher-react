@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import data from './models/books.json';
 import Home from './components/Home.js'
-import Header from './components/Header.js';
 import About from './pages/About.js';
 import Categories from './pages/Categories.js'
 import BookList from './components/BookList.js'
@@ -14,10 +12,8 @@ import RandomBook from './components/RandomBook.js';
 import NavBar from './components/NavBar.js'
 
 import Flash from './components/Flash';
-import Alert from '@material-ui/lab/Alert';
-import Fade from '@material-ui/core/Fade';
 
-import Heart from "react-animated-heart"
+// import Heart from "react-animated-heart"
 
 const App = (props) => {
   //-- data is the first initial state
@@ -188,7 +184,7 @@ const App = (props) => {
         />
         <Route exact path="/allbooks" render={() => (
           <>
-            <Header />
+            <NavBar />
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
             {/* {findbooks} is the value of the function findBooks */}
             <p>{bookCase.length}</p>
@@ -231,7 +227,6 @@ const App = (props) => {
 
         <Route exact path="/bookcase" render={() => (
           <>
-            {/* <Header /> */}
             <NavBar />
             {(bookCase.length === 0)
             ? <h2>Add some books to your bookcase</h2>

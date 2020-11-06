@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
 import NavBar from '../components/NavBar.js';
 import Row from '../components/Row.js';
 
