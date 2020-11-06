@@ -1,0 +1,10 @@
+.NumPagesDiv {
+  width: 30%;
+  margin: 10px;
+}
+.NumPagesDiv Form {
+  padding: 15px;
+  background-color: #190933;
+  color: white;
+  border-radius: 20px;
+}

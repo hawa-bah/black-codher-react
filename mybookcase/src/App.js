@@ -188,7 +188,7 @@ const App = (props) => {
             <h1 className="pageTitle dark">Books</h1>
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
             {/* {findbooks} is the value of the function findBooks */}
-            <p>{bookCase.length}</p>
+            <p className="pageSubTit dark">Books added in the bookcase:{bookCase.length}</p>
             
             <Search 
               findBooks={findBooks} 

@@ -1,4 +1,80 @@
-.searchForm{
-    padding: 10px;
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster+Two&family=Oleo+Script:wght@400;700&display=swap");
+.pageSubTit.dark {
+  font-family: "Lobster Two", cursive;
+  color: purple;
+}
+.searchForm {
+  padding: 30px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.searchDiv {
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: #5dd9c1;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 900px;
+}
+.searchShown {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-evenly;
+}
+.searchTitle {
+  color: white;
+  font-size: xx-large;
+}
+.btnSearch {
+  background-color: white;
+  border-radius: 40px;
+  border-style: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  /* position: relative;
+  position: right;*/
+}
+.btnSearch:hover {
+  background-color: black;
+  color: white;
+  border-radius: 40px;
+  border-style: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  /* position: relative;
+    position: right;*/
+}
+.btnSearchSub {
+  background-color: white;
+  color: black;
+  border-radius: 40px;
+  border-style: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  /* position: relative;
+    position: right;*/
+}
+.btnSearchSub:hover {
+  background-color: black;
+  color: white;
+  border-radius: 40px;
+  border-style: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  /* position: relative;
+    position: right;*/
 }

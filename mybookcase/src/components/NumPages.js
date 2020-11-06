@@ -1,5 +1,6 @@
 import React from 'react';
 import {Form} from 'react-bootstrap';
+import './NumPages.css'
 
 const NumPages =  (props) => {
 
@@ -10,7 +11,7 @@ const NumPages =  (props) => {
      <>
      <div className="NumPagesDiv">
         <Form>
-            <Form.Label>How many items do you want to see per page?</Form.Label>
+            <Form.Label>Items per page</Form.Label>
             <Form.Control as="select" value={props.itemsCoutPerPage} onChange={(e) => handleNumPage(e)}>
                 <option value="select">Select</option>    
                 <option value="3">3</option>

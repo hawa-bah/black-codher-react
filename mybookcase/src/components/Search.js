@@ -35,7 +35,12 @@ const Search = (props) => {
             </label>
         </form> */
         <>
-            <button className="btnSearch" onClick={() => handleSearch()}>Search</button>
+        <div className="searchDiv">
+            <div className="searchShown">
+            <p className="searchTitle">Search books by author, subject, ...</p>
+            <button className="btnSearch" onClick={() => handleSearch()}><i class="fas fa-search"></i></button>
+            </div>
+            
             {searchClick 
             ? <Form onSubmit={handleSubmit} >
                 <Form.Group controlId="searchKeyword">
@@ -62,11 +67,12 @@ const Search = (props) => {
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit" >
-                Submit
+                <Button className="btnSearchSub" variant="primary" type="submit" >
+                Search
                 </Button>
             </Form>
             : null}
+        </div>
         </>
     );
 }

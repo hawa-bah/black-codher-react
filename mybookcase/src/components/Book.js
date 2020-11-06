@@ -30,9 +30,9 @@ const Book = (props) => {
     return (
         <div className="BookDiv">
             <div className="BookSub1">
-                <h2>{title}</h2>
-                <p>by {authors? authors.join(',') : 'No authors'}</p>
-                <p>{listPrice && listPrice.amount}</p>
+                <h2 className="BookTitle">{title}</h2>
+                <p>by <span className="BookAuthor">{authors? authors.join(',') : 'No authors'}</span></p>
+                <p>£{listPrice && listPrice.amount}</p>
                 {/* <p>{listPrice.amount}</p> */}
                 <img className="imgBook" src={smallThumbnail || thumbnail} alt={title}/>
                 {props.addBook && (
