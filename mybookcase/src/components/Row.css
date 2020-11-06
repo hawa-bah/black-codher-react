@@ -1,10 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oleo+Script:wght@400;700&display=swap");
+
 .row-div {
   width: 100%;
+  background-color: black;
+  color: white;
+}
+.row-div h3 {
+  padding-top: 10px;
 }
 .row-books {
   display: flex;
-  padding: 15px;
-  overflow-y: scroll;
+  padding-top: 15px;
+  /* overflow-y: scroll; */
   overflow-x: scroll;
   scrollbar-base-color: blue;
   scrollbar-color: purple;
@@ -23,4 +31,33 @@
 }
 .row-book:hover {
   transform: scale(1.25);
+}
+.row-categories-titles {
+  color: #b084cc;
+  font-family: "Oleo Script", cursive;
+  padding: 20px;
+}
+.description {
+  padding: 10px;
+  padding-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #b084cc;
+}
+.description-title {
+  font-family: "Oleo Script", cursive;
+  font-size: xx-large;
+}
+.description-text {
+  padding: 20px;
+}
+.description-author {
+  float: right;
+}
+.description-author span {
+  font-family: "Kaushan Script", cursive;
+  font-family: "Oleo Script", cursive;
+  font-weight: lighter;
+  font-size: 22px;
 }

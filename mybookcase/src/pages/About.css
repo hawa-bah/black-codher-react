@@ -1,102 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap");
 
-body, html {
-    box-sizing: border-box;
-    margin: 0px;
+body,
+html {
+  box-sizing: border-box;
+  margin: 0px;
 }
-.bodyAbout{
-    background-color: rgb(41, 0, 41);
-    font-family: 'Open Sans', sans-serif;
+.bodyAbout {
+  background-color: rgb(41, 0, 41);
+  font-family: "Open Sans", sans-serif;
 }
-.pageTitle{
-    color: ivory;
-    padding: 30px;
-    font-family: 'Monoton', cursive;
-    font-size: 90px;
-    text-align: center;
+.pageTitle {
+  color: ivory;
+  padding: 30px;
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  text-align: center;
 }
-.navBar{
-    padding: 10px;
-    font-size: 18px;
-    background-color: whitesmoke;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    text-align: center;
-    display: flex;
-    justify-content: flex-end;
-    
+.pageTitle.dark {
+  color: #292929;
+  padding: 30px;
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  text-align: center;
+}
+.navBar {
+  padding: 10px;
+  font-size: 18px;
+  background-color: whitesmoke;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
 }
 .navLink {
-    background-color: rgb(41, 0, 41);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif ;
-    min-width: 70px;
-    border-radius: 5px;
-    padding: 5px;
-    margin-right: 5px;
+  background-color: rgb(41, 0, 41);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 70px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 5px;
 }
-.navLink:hover{
-    background-color: white;
-    color:  rgb(41, 0, 41);
-    box-shadow: 0px 0px 5px 5px lightgray;
+.navLink:hover {
+  background-color: white;
+  color: rgb(41, 0, 41);
+  box-shadow: 0px 0px 5px 5px lightgray;
 }
 .Link {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 .Link:hover {
-    text-decoration: none;
-    color: rgb(41, 0, 41);
+  text-decoration: none;
+  color: rgb(41, 0, 41);
 }
-.Link:visited{
-    text-decoration: none;
-}
-
-.topAbout{
-    margin: 10px;
-    padding: 20px; 
-    border-radius: 10px;
-    color: white; 
-}
-.topAbout:hover{
-    background-color: whitesmoke;
-    color: black; 
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
+.Link:visited {
+  text-decoration: none;
 }
 
-.topAbout h2{
-    padding: 10px;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Staatliches', cursive;
-    font-size: xx-large;
+.topAbout {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
 }
-.btnAdd{
-    background-color:rgb(41, 0, 41);
-    color: white;
-    padding: 5px;
-    border-radius: 7px;
-
-}
-.gifDiv{
-    width: auto;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.topAbout:hover {
+  background-color: whitesmoke;
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.topBanner{
-    width: 100%;
-    background-image: '../../public/img/booksOpen.jpg';  
+.topAbout h2 {
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Staatliches", cursive;
+  font-size: xx-large;
+}
+.btnAdd {
+  background-color: rgb(41, 0, 41);
+  color: white;
+  padding: 5px;
+  border-radius: 7px;
+}
+.gifDiv {
+  width: auto;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topBanner {
+  width: 100%;
+  background-image: "../../public/img/booksOpen.jpg";
 }
 /* .imgBooks{
     width: 100px;
     height: auto;
 } */
-
+@media screen and (max-width: 480px) {
+  .pageTitle {
+    color: ivory;
+    padding: 30px;
+    font-family: "Monoton", cursive;
+    font-size: 30px;
+    text-align: center;
+  }
+  .pageTitle.dark {
+    color: #292929;
+    padding: 30px;
+    font-family: "Monoton", cursive;
+    font-size: 30px;
+    text-align: center;
+  }
+}

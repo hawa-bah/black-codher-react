@@ -5,7 +5,10 @@ const Row = (props) => {
 
     const [rowBooks, setRowBooks] = useState([]);
     const [click, setClick] = useState(false);
+    const [click2, setClick2] = useState(false);
+
     const [description, setDesciption] = useState('');
+    const [authors, setAuthor] = useState('');
     
 
     useEffect(() => {
@@ -23,12 +26,20 @@ const Row = (props) => {
 
     return (
         <>
+    
         <div className="row-div" id={props.title}>
-            <h3>{props.title}({rowBooks.length})</h3>
+            <h3 className="row-categories-titles">{props.title}({rowBooks.length})</h3>
             <div className="row-books" >
                 {rowBooks.map((book)=> (
                     <>
-                        <div className="row-book" onMouseOver={()=> {setClick(true); setDesciption(book.volumeInfo.description)}} onMouseOut={() => setClick(false)} >
+                        <div className="row-book" 
+                            onMouseEnter={()=> {
+                                setClick(true); 
+                                setDesciption(book.volumeInfo.description);
+                                setAuthor(book.volumeInfo.authors)}}    
+                            onMouseOut={() => {
+                                if(click2){setClick(false)
+                                }}}>
                             <p>{book.volumeInfo.title}</p>
                             <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail } alt={book.volumeInfo.title}></img>
                         </div>
@@ -37,9 +48,21 @@ const Row = (props) => {
                 
             </div>
             { click &&
-                <div className="description">
-                    <p>Description</p>
-                    <p>{description}</p> 
+                <div 
+                    className="description"
+                    // onMouseOver={()=> setClick(true)} 
+                    // onMouseOut={() => setClick(false)}
+                    >
+                    <p className="description-title">Description</p>
+                    <p
+                        className="description-text"
+                        onMouseOver={()=> setClick2(true)}
+                        onMouseOver={()=> setClick(true)}
+                        onMouseOut={() => setClick(false)}
+                    >
+                        {description}
+                    </p>
+                    <p className="description-author">by <span>{authors}</span></p> 
                 </div>
             }
         </div>   

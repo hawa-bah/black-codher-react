@@ -4,8 +4,6 @@ import Alert from '@material-ui/lab/Alert';
 
 const Flash = (props) => {
 
-
-
     return (
         <div>
             {

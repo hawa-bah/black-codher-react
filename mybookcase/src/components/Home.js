@@ -13,7 +13,6 @@ const Home  = () => {
             <Link to="/bookcase" className="navLink bookLink">Bookcase</Link>
             <Link to="/about" className="navLink aboutLink">About</Link>
         </div>
-        {/* <NavBar /> */}
         <div className="homeDiv">
             <div className="homeText">
                 <h1 className="Home-title">BOOKY</h1>

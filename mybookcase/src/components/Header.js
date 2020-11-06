@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Search from './Search.js';
 
 import './Header.css';
 
@@ -14,9 +13,6 @@ const Header = () => {
             <Link to="/bookcase" className="navLink bookLink">Bookcase</Link>
             <Link to="/about" className="navLink aboutLink">About</Link>
         </div>
-        {/* <Search /> */}
-        
-        
     </React.Fragment>
     )
 };

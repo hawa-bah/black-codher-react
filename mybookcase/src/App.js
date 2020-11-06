@@ -185,6 +185,7 @@ const App = (props) => {
         <Route exact path="/allbooks" render={() => (
           <>
             <NavBar />
+            <h1 className="pageTitle dark">Books</h1>
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
             {/* {findbooks} is the value of the function findBooks */}
             <p>{bookCase.length}</p>
@@ -228,6 +229,7 @@ const App = (props) => {
         <Route exact path="/bookcase" render={() => (
           <>
             <NavBar />
+            <h1 className="pageTitle dark">Bookcase</h1>
             {(bookCase.length === 0)
             ? <h2>Add some books to your bookcase</h2>
             : <p>Total books: {bookCase.length}</p>}
@@ -254,7 +256,9 @@ const App = (props) => {
 
         <Route exact path="/categories" render={() => (
           <>
+          <div className="Categories-div" style={{backgroundColor:"black"}}>
             <Categories />
+          </div>
           </>
         )}
         />
