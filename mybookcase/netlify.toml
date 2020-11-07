@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "/mybookcase/index.html"
-  status = 200
