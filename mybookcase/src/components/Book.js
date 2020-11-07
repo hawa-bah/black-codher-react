@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
 // import HeartBtn from './HeartBtn.js'
 // import Heart from "react-animated-heart";
 
@@ -13,20 +12,22 @@ const Book = (props) => {
         saleInfo: {listPrice}
     } = props.book;
 
-    const [isClick, setClick] = useState(false);
+    
+
+//  activate this later ------------------------------------
+
+    // const [isClick, setClick] = useState(false); 
+
     // function handleHeart(title,id) {
-    //     props.setClick(!props.isClick)
-    // }
-    function handleHeart(title,id) {
-        // this.setClick(!this.isClick);
-        console.log(`The Book '${title}' was clicked`);
+    //     // this.setClick(!this.isClick);
+    //     console.log(`The Book '${title}' was clicked`);
         
-          // console.log(book.id)
-          if(props.book.id === id){
-            console.log(props.book.volumeInfo.title + "and"+  title);
-            setClick(!isClick);
-        }
-    }
+    //       // console.log(book.id)
+    //       if(props.book.id === id){
+    //         console.log(props.book.volumeInfo.title + "and"+  title);
+    //         setClick(!isClick);
+    //     }
+    // }
     return (
         <div className="BookDiv">
             <div className="BookSub1">

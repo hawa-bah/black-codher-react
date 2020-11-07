@@ -1,5 +1,4 @@
-import React,{Fragment} from 'react';
-import Book from './Book';
+import React from 'react';
 import data from '../models/books.json';
 import {Link} from 'react-router-dom';
 

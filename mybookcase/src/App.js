@@ -8,7 +8,7 @@ import Categories from './pages/Categories.js'
 import BookList from './components/BookList.js'
 import Search from './components/Search.js';
 import NumPages from './components/NumPages.js';
-import RandomBook from './components/RandomBook.js';
+// import RandomBook from './components/RandomBook.js';
 import NavBar from './components/NavBar.js'
 import './App.css'
 

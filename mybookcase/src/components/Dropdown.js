@@ -1,4 +1,4 @@
-import React, {useState, componentDidMount, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import './Dropdown.css';
 import { HashLink } from 'react-router-hash-link';
 
@@ -53,7 +53,8 @@ const Dropdown = (props) => {
         // console.log(this.props)
     })
 
-    const[click, setClick] = useState(false);
+    // activate later----------------------------------------
+    // const[click, setClick] = useState(false);
     return(
         <>
             <ul 
@@ -81,10 +82,8 @@ const Dropdown = (props) => {
                             className='dropdown-link' 
                             to={item.path+item.hash} 
                             scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end', duration: 4000 })}
-                            onClick={() => {setClick(false); 
-                            // {document.getElementById(item.title).scrollIntoView()}
-                        }}
-                            // targetRef={targetRef}
+                            // activate later ---------------------------------------------------------------
+                            // onClick={() => {setClick(false); }}
                         >{item.title}</HashLink>
                     </li>
                     </>

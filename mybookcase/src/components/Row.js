@@ -19,7 +19,8 @@ const Row = (props) => {
                 }
             }
         getRowBooks();
-    }, []);
+    // }, []);
+        }, [props.title]);
     // console.log(rowBooks);
     // console.log(rowBooks.length);
     // console.log(rowBooks.table);
@@ -56,8 +57,8 @@ const Row = (props) => {
                     <p className="description-title">Description</p>
                     <p
                         className="description-text"
-                        onMouseOver={()=> setClick2(true)}
-                        onMouseOver={()=> setClick(true)}
+                        // onMouseOver={()=> setClick2(true)}
+                        onMouseOver={()=> {setClick(true); setClick2(true)}}
                         onMouseOut={() => setClick(false)}
                     >
                         {description}
