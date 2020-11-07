@@ -1,7 +1,6 @@
 import React from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
-import RandomBook from '../components/RandomBook.js';
 
 const About = (props) =>{
     return(
@@ -36,8 +35,7 @@ const About = (props) =>{
                         </iframe>
                     </div>
                 </div> 
-                <RandomBook books={props.books}/>
-                {/* <img className="imgBooks" src="/img/booksOpen.jpg" alt="booksOpen"/> */}
+                
             </div>
             
         </React.Fragment>

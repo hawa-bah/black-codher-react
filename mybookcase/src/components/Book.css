@@ -31,11 +31,8 @@
 .BookDescp {
   width: 100%;
   max-height: 200px;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
-/* .BookDescp:-webkit-scrollbar {
-  overflow: hidden;
-} */
 .BookAuthor {
   color: purple;
   font-weight: 600;

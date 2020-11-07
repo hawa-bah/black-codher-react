@@ -1,0 +1,7 @@
+.midDiv {
+  display: flex;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+  /* justify-items: center; */
+}

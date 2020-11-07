@@ -10,6 +10,7 @@ import Search from './components/Search.js';
 import NumPages from './components/NumPages.js';
 import RandomBook from './components/RandomBook.js';
 import NavBar from './components/NavBar.js'
+import './App.css'
 
 import Flash from './components/Flash';
 
@@ -188,7 +189,6 @@ const App = (props) => {
             <h1 className="pageTitle dark">Books</h1>
             <Flash flash={flash} bookTitleAdded={bookTitleAdded}/>
             {/* {findbooks} is the value of the function findBooks */}
-            <p className="pageSubTit dark">Books added in the bookcase:{bookCase.length}</p>
             
             <Search 
               findBooks={findBooks} 
@@ -197,10 +197,14 @@ const App = (props) => {
               searchType={searchType}
               setSearchType={setSearchType}
             />
-            <NumPages 
-              setItemsPerPage={setItemsPerPage}
-              itemsCountPerPage={itemsCountPerPage} 
-            />
+            <div className="midDiv">
+              <p className="pageSubTit dark">Books in the bookcase: {bookCase.length}</p>
+              <NumPages 
+                setItemsPerPage={setItemsPerPage}
+                itemsCountPerPage={itemsCountPerPage} 
+              />
+            </div>
+            
             {/* I added createFlash as an atribute because it is also used when each button from the Booklist is clicked */}
             <div className="error">
                 {errorSearch && (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
-
+import './Home.css';
+import RandomBook from './RandomBook.js'
 
 const Home  = () => {
 
@@ -16,7 +16,10 @@ const Home  = () => {
         <div className="homeDiv">
             <div className="homeText">
                 <h1 className="Home-title">BOOKY</h1>
-                <h2 className="Home-subtitle">The bookcase you were looking for.</h2>
+                <h2 className="Home-subtitle">Your online bookcase.</h2>
+            </div>
+            <div>
+                <RandomBook />
             </div>
             
         </div>

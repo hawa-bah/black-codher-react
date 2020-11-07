@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster+Two&family=Oleo+Script:wght@400;700&family=Overlock:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Khand:wght@700&family=Lobster+Two&family=Oleo+Script:wght@400;700&family=Overlock:wght@900&display=swap");
+
 .NumPagesDiv {
   width: 30%;
   margin: 10px;
@@ -7,4 +10,22 @@
   background-color: #190933;
   color: white;
   border-radius: 20px;
+}
+.pageSubTit {
+  color: #190933;
+  text-underline-position: above;
+  font-weight: 900;
+  font-size: xx-large;
+  font-family: "Khand", sans-serif;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 220px;
+}
+.midDiv {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
 }

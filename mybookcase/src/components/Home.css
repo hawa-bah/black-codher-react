@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
+.Home-title {
+  /* text-align: left; */
+  color: white;
+  padding: 0px;
+  font-family: "Monoton", cursive;
+  font-size: 120px;
+  /* text-align: center; */
+}
+.homeText {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.homeDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 5%;
+  background-image: url("/library.jpg");
+}
+.Home-subtitle {
+  font-weight: lighter;
+  padding: 5px;
+  color: white;
+}
+.randomBookDiv {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 50px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.randomBookDiv img {
+  margin-right: auto;
+  margin-left: auto;
+}
+.homeLink {
+  color: white;
+  padding: 10px;
+  /* max-width: 50px; */
+  margin-right: auto;
+  margin-left: auto;
+  background-color: black;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.homeLink:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px silver;
+}
+.homeLinkDiv {
+  margin: 20px;
+}
+@media screen and (max-width: 620px) {
+  .Home-title {
+    color: white;
+    padding: 10px;
+    font-family: "Monoton", cursive;
+    font-size: 60px;
+  }
+  .homeDiv {
+    display: flex;
+    padding-top: 50%;
+  }
+}

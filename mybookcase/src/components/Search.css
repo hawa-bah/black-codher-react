@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster+Two&family=Oleo+Script:wght@400;700&display=swap");
-.pageSubTit.dark {
-  font-family: "Lobster Two", cursive;
-  color: purple;
-}
+
 .searchForm {
   padding: 30px;
   width: 100%;
@@ -21,6 +18,7 @@
 }
 .searchShown {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   align-content: center;
   padding-left: 20px;
