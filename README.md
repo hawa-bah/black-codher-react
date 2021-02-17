@@ -1,8 +1,11 @@
 ## README
 
-MyBookcase (ASSESSMENT) => [mybookcase](https://github.com/hawa-bah/black-codher-react/tree/master/mybookcase)
-MyBookcase (DEMO) => [mybookcase demo](https://hawas-bookcase-app.netlify.app/)
+This repository contains some practice folders and a final project I've created when I finishedlearning React. 
 
-Other folders where I have been practicing, experimenting and testing during the first few sessions:
+### FINAL PROJECT:
+* Bookcase application
+ 
+### PRACTICE FOLDER:
+Where I have been practicing, experimenting and testing during the first few sessions:
 * bookstoreReactApp
 * myfirstapp
